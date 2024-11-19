@@ -118,7 +118,23 @@ DockerCompilerFileTemplates['depends_on'] = """\
         depends_on:
             - {dependsOn}
 """
-
+# added this to use my image since it was able to build when using dummies
+DockerCompilerFileTemplates['router_compose_service'] = """\
+    {nodeId}:
+        build: ./{nodeId}
+        container_name: {nodeName}
+        cap_add:
+            - ALL
+        sysctls:
+            - net.ipv4.ip_forward=1
+            - net.ipv4.conf.default.rp_filter=0
+            - net.ipv4.conf.all.rp_filter=0
+        privileged: true
+        networks:
+{networks}{ports}{volumes}
+        labels:
+{labelList}
+"""
 DockerCompilerFileTemplates['compose_service'] = """\
     {nodeId}:
         build: ./{nodeId}
@@ -890,8 +906,12 @@ class Docker(Compiler):
             volumes = DockerCompilerFileTemplates['compose_volumes'].format(
                 volumeList = lst
             )
+        if type == 'rnode' or type == 'rs':
+            dockerfile = 'FROM bashayer123/bird_grpc:latest\n'  # Directly assign the router image here
+        else:
+            dockerfile = DockerCompilerFileTemplates['dockerfile']  # Use the default template for other node types
 
-        dockerfile = DockerCompilerFileTemplates['dockerfile']
+        
         mkdir(real_nodename)
         chdir(real_nodename)
 
@@ -909,8 +929,11 @@ class Docker(Compiler):
 
         #included in the seedemu-base dockerImage.
         #dockerfile += 'RUN curl -L https://grml.org/zsh/zshrc > /root/.zshrc\n'
-        dockerfile = 'FROM {}\n'.format(md5(image.getName().encode('utf-8')).hexdigest()) + dockerfile
-        self._used_images.add(image.getName())
+        
+        
+        if not (type == 'rnode' or type == 'rs'):
+            dockerfile = 'FROM {}\n'.format(md5(image.getName().encode('utf-8')).hexdigest()) + dockerfile
+            self._used_images.add(image.getName())
 
         for cmd in node.getBuildCommands(): dockerfile += 'RUN {}\n'.format(cmd)
 
@@ -936,6 +959,19 @@ class Docker(Compiler):
         dockerfile += self._addFile('/seedemu_sniffer', DockerCompilerFileTemplates['seedemu_sniffer'])
         dockerfile += self._addFile('/seedemu_worker', DockerCompilerFileTemplates['seedemu_worker'])
 
+        if type == 'rnode' or type == 'rs':
+            dockerfile += 'RUN mkdir /bird\n'
+            dockerfile += 'COPY ./bird /bird\n'
+            dockerfile += 'WORKDIR /bird\n'
+            dockerfile += 'RUN autoreconf -i\n'
+            dockerfile += 'RUN ./configure --sysconfdir=/etc/bird\n'
+            dockerfile += 'RUN make\n'
+            dockerfile += 'RUN make install\n'
+            dockerfile += 'ENV LD_LIBRARY_PATH=/bird/proto/mbgp/mBGP/cmake/build:$LD_LIBRARY_PATH\n'
+            dockerfile += 'RUN ulimit -c unlimited\n'
+            dockerfile += 'ENV CORE_PATTERN=/tmp/core.%e.%p.%t\n'
+            dockerfile += 'WORKDIR /\n'
+            
         dockerfile += 'RUN chmod +x /start.sh\n'
         dockerfile += 'RUN chmod +x /seedemu_sniffer\n'
         dockerfile += 'RUN chmod +x /seedemu_worker\n'
@@ -961,17 +997,28 @@ class Docker(Compiler):
         )
 
         name = sub(r'[^a-zA-Z0-9_.-]', '_', name)
-
-        return DockerCompilerFileTemplates['compose_service'].format(
-            nodeId = real_nodename,
-            nodeName = name,
-            dependsOn = md5(image.getName().encode('utf-8')).hexdigest(),
-            networks = node_nets,
-            # privileged = 'true' if node.isPrivileged() else 'false',
-            ports = ports,
-            labelList = self._getNodeMeta(node),
-            volumes = volumes
-        )
+        
+        if type == 'rnode' or type == 'rs': # this is to use my image bashayer123/bird_grpc:latest
+            return DockerCompilerFileTemplates['router_compose_service'].format(
+                nodeId = real_nodename,
+                nodeName = name,
+                networks = node_nets,
+                # privileged = 'true' if node.isPrivileged() else 'false',
+                ports = ports,
+                labelList = self._getNodeMeta(node),
+                volumes = volumes
+            )
+        else:
+            return DockerCompilerFileTemplates['compose_service'].format(
+                nodeId = real_nodename,
+                nodeName = name,
+                dependsOn = md5(image.getName().encode('utf-8')).hexdigest(),
+                networks = node_nets,
+                # privileged = 'true' if node.isPrivileged() else 'false',
+                ports = ports,
+                labelList = self._getNodeMeta(node),
+                volumes = volumes
+            )
 
     def _compileNet(self, net: Network) -> str:
         """!

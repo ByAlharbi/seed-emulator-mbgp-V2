@@ -2,7 +2,7 @@ from sys import stderr
 
 from .providers import DataProvider
 from . .core import Emulator, AutonomousSystem, InternetExchange
-from . .layers import Base, Routing, Ebgp, Ibgp, Ospf
+from . .layers import Base, Routing, Ebgp, Ibgp, Ospf, Mbgp
 
 class DefaultGenerator:
     """!
@@ -118,6 +118,7 @@ class DefaultGenerator:
         sim.addLayer(Base())
         sim.addLayer(Routing())
         sim.addLayer(Ebgp())
+        sim.addLayer(Mbgp())
         sim.addLayer(Ibgp())
         sim.addLayer(Ospf())
 

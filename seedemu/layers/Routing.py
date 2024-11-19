@@ -5,6 +5,8 @@ from ipaddress import IPv4Network
 RoutingFileTemplates: Dict[str, str] = {}
 
 RoutingFileTemplates["rs_bird"] = """\
+log "/var/log/bird.log" all;
+debug protocols all;
 router id {routerId};
 protocol device {{
 }}
@@ -15,6 +17,8 @@ RoutingFileTemplates["rnode_bird_direct_interface"] = """
 """
 
 RoutingFileTemplates["rnode_bird"] = """\
+log "/var/log/bird.log" all;
+debug protocols all;
 router id {routerId};
 ipv4 table t_direct;
 protocol device {{
@@ -89,6 +93,7 @@ class Routing(Layer):
                 rs_node: Node = obj
                 self.__installBird(rs_node)
                 rs_node.appendStartCommand('[ ! -d /run/bird ] && mkdir /run/bird')
+                rs_node.appendStartCommand('ulimit -c unlimited')
                 rs_node.appendStartCommand('bird -d', True)
                 self._log("Bootstrapping bird.conf for RS {}...".format(name))
 
@@ -139,6 +144,7 @@ class Routing(Layer):
                 ))
 
                 rnode.appendStartCommand('[ ! -d /run/bird ] && mkdir /run/bird')
+                rnode.appendStartCommand('ulimit -c unlimited')
                 rnode.appendStartCommand('bird -d', True)
 
                 if has_localnet: rnode.addProtocol('direct', 'local_nets', RoutingFileTemplates['rnode_bird_direct'].format(interfaces = ifaces))
