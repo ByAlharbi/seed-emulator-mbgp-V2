@@ -50,20 +50,24 @@ class Mbgp(Layer, Graphable):
         return self
 
     def __createPeer(self, nodeA: Router, nodeB: Router, addrA: str, addrB: str, rel: PeerRelationship) -> None:
-        rsNode, routerA, routerB = None, None, None
+        
+        rsNode: Router = None
+        routerA: Router = None
+        routerB: Router = None
 
         # Identify the types of nodes involved (Route Server or Router)
         for node in [nodeA, nodeB]:
             if node.getRole() == NodeRole.RouteServer:
                 rsNode = node
-            else:
-                if routerA is None:
-                    routerA = node
-                else:
-                    routerB = node         
+                continue
+            
+            if routerA == None: routerA = node
+            elif routerB == None: routerB = node        
             # since mbgp coded to use main RTB , we need to pipe the local nets to the main rotue - I'll change it later
             node.addTablePipe('t_direct', 'master4')
-
+        
+        assert routerA != None, 'both nodes are RS node. cannot setup peering.'
+        assert routerA != routerB, 'cannot peer with oneself.'
 
         # Route Server Peering: if there is an rsNode and only one routerNode (either routerA or routerB)
         if rsNode and routerA:
