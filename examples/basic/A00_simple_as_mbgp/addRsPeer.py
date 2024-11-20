@@ -5,7 +5,7 @@ from seedemu.layers import Base, Routing, Ebgp, Mbgp
 from seedemu.services import WebService
 from seedemu.compiler import Docker, Platform
 from seedemu.core import Emulator, Binding, Filter
-import sys, os
+import sys, os, subprocess
 
 def run(dumpfile = None):
     ###############################################################################
@@ -31,8 +31,7 @@ def run(dumpfile = None):
     emu     = Emulator()
     base    = Base()
     routing = Routing()
-    ebgp    = Ebgp()
-    mbgp = Mbgp()
+    mbgp    = Mbgp()
     web     = WebService()
 
     ###############################################################################
@@ -90,20 +89,16 @@ def run(dumpfile = None):
     ###############################################################################
     # Peering these ASes at Internet Exchange IX-100
 
-    # ebgp.addRsPeer(100, 150)
-    # ebgp.addRsPeer(100, 151)
-    # ebgp.addRsPeer(100, 152)
-
     mbgp.addRsPeer(100, 150)
     mbgp.addRsPeer(100, 151)
     mbgp.addRsPeer(100, 152)
+
 
     ###############################################################################
     # Rendering 
 
     emu.addLayer(base)
     emu.addLayer(routing)
-    # emu.addLayer(ebgp)
     emu.addLayer(mbgp)
     emu.addLayer(web)
 
@@ -114,7 +109,8 @@ def run(dumpfile = None):
 
         ###############################################################################
         # Compilation
-        emu.compile(Docker(platform=platform), './addRsPeer_output', override=True)
+        emu.compile(Docker(platform=platform), './output', override=True)
+        subprocess.run(["./copy_bird_dir.sh"], check=True) 
 
 if __name__ == '__main__':
     run()
