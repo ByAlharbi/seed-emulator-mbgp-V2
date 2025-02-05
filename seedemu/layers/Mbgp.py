@@ -24,6 +24,15 @@ MbgpFileTemplates["mbgp_peer"] = """
     bfd yes;
 """
 
+# Define the template for a standard BGP peer without filtering
+MbgpFileTemplates["bfd_mbgp_peer"] = """
+    interface "{interface_name}" {{
+        min rx interval 500 ms;
+        min tx interval 500 ms;
+        multiplier 5;
+    }};
+"""
+
 
 class PeerRelationship(Enum):
     Provider = "Provider"
@@ -50,10 +59,12 @@ class Mbgp(Layer, Graphable):
         return self
 
     def __createPeer(self, nodeA: Router, nodeB: Router, addrA: str, addrB: str, rel: PeerRelationship) -> None:
-        
+  
         rsNode: Router = None
         routerA: Router = None
         routerB: Router = None
+        interfaceA: str = None
+        interfaceB: str = None
 
         # Identify the types of nodes involved (Route Server or Router)
         for node in [nodeA, nodeB]:
@@ -61,50 +72,76 @@ class Mbgp(Layer, Graphable):
                 rsNode = node
                 continue
             
-            if routerA == None: routerA = node
-            elif routerB == None: routerB = node        
-            # since mbgp coded to use main RTB , we need to pipe the local nets to the main rotue - I'll change it later
-            node.addTablePipe('t_direct', 'master4')
-        
-        assert routerA != None, 'both nodes are RS node. cannot setup peering.'
-        assert routerA != routerB, 'cannot peer with oneself.'
+            if routerA is None:
+                routerA = node
+            elif routerB is None:
+                routerB = node        
 
-        # Route Server Peering: if there is an rsNode and only one routerNode (either routerA or routerB)
+            node.addTablePipe('t_direct', 'master4')
+
+        assert routerA is not None, 'Both nodes are RS nodes. Cannot setup peering.'
+        assert routerA != routerB, 'Cannot peer with oneself.'
+
+        # Extract the correct interface names
+        for iface in routerA.getInterfaces():
+            if iface.getAddress() == addrA:
+                interfaceA = iface.getNet().getName()  # Get network name as interface
+                break
+
+        for iface in routerB.getInterfaces():
+            if iface.getAddress() == addrB:
+                interfaceB = iface.getNet().getName()  # Get network name as interface
+                break
+
+        assert interfaceA is not None and interfaceB is not None, 'Unable to determine interface names.'
+
+        # Print interface and neighbor details for debugging
+        print(f"Router A (ASN {routerA.getAsn()}) - Interface: {interfaceA} - Peer: {addrB}")
+        print(f"Router B (ASN {routerB.getAsn()}) - Interface: {interfaceB} - Peer: {addrA}")
+
+        # Maintain a set of interfaces per router to avoid duplicates
+        if not hasattr(routerA, "_bfd_interfaces"):
+            routerA._bfd_interfaces = set()
+        if not hasattr(routerB, "_bfd_interfaces"):
+            routerB._bfd_interfaces = set()
+
+        routerA._bfd_interfaces.add(interfaceA)
+        routerB._bfd_interfaces.add(interfaceB)
+
+        # Route Server Peering
         if rsNode and routerA:
-            # Configure RS peering between rsNode and routerA
-            rsNode.addProtocol('mbgp', 'p_as{}'.format(routerA.getAsn()), MbgpFileTemplates["rs_mbgp_peer"].format(
+            rsNode.addProtocol('mbgp', f'p_as{routerA.getAsn()}', MbgpFileTemplates["rs_mbgp_peer"].format(
                 localAddress=addrA,
                 localAsn=rsNode.getAsn(),
                 peerAddress=addrB,
                 peerAsn=routerA.getAsn()
             ))
 
-            routerA.addProtocol('mbgp', 'p_rs{}'.format(rsNode.getAsn()), MbgpFileTemplates["rs_mbgp_peer"].format(
+            routerA.addProtocol('mbgp', f'p_rs{rsNode.getAsn()}', MbgpFileTemplates["rs_mbgp_peer"].format(
                 localAddress=addrB,
                 localAsn=routerA.getAsn(),
                 peerAddress=addrA,
                 peerAsn=rsNode.getAsn()
             ))
 
-        # Private Peering: if there are two routers (routerA and routerB) and no rsNode
+        # Private Peering
         elif routerA and routerB:
-            # Configure private peering between routerA and routerB
-            routerA.addProtocol('mbgp', 'x_as{}'.format(routerB.getAsn()), MbgpFileTemplates["mbgp_peer"].format(
+            routerA.addProtocol('mbgp', f'x_as{routerB.getAsn()}', MbgpFileTemplates["mbgp_peer"].format(
                 localAddress=addrA,
                 localAsn=routerA.getAsn(),
                 peerAddress=addrB,
                 peerAsn=routerB.getAsn()
             ))
 
-            routerB.addProtocol('mbgp', 'x_as{}'.format(routerA.getAsn()), MbgpFileTemplates["mbgp_peer"].format(
+            routerB.addProtocol('mbgp', f'x_as{routerA.getAsn()}', MbgpFileTemplates["mbgp_peer"].format(
                 localAddress=addrB,
                 localAsn=routerB.getAsn(),
                 peerAddress=addrA,
                 peerAsn=routerA.getAsn()
             ))
+
         else:
             raise AssertionError("Invalid configuration: cannot determine Route Server or Router nodes correctly.")
-
 
 
     def configure(self, emulator: Emulator) -> None:
@@ -177,6 +214,17 @@ class Mbgp(Layer, Graphable):
 
             self.__createPeer(a_ixnode, b_ixnode, a_addr, b_addr, rel)
 
+        # Now, generate a single BFD configuration per router
+        for ((scope, type, name), obj) in reg.getAll().items():
+            if type == "rnode" and isinstance(obj, Router):  # Ensure it's a Router
+                router = obj  # Now we are sure it's a Router
+                if hasattr(router, "_bfd_interfaces") and router._bfd_interfaces:
+                    interfaces_config = "\n".join(
+                        MbgpFileTemplates["bfd_mbgp_peer"].format(interface_name=iface)
+                        for iface in router._bfd_interfaces
+                    )
+
+                    router.addProtocol("bfd", "", interfaces_config)  # No extra "protocol bfd"
 
     def getName(self) -> str:
         return "Mbgp"

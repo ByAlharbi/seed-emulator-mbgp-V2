@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 
-from seedemu.layers import Base, Routing, Ebgp
+from seedemu.layers import Base, Routing, Ebgp, PeerRelationship
 from seedemu.services import WebService
 from seedemu.compiler import Docker, Platform
 from seedemu.core import Emulator, Binding, Filter
@@ -89,10 +89,12 @@ def run(dumpfile = None):
     ###############################################################################
     # Peering these ASes at Internet Exchange IX-100
 
-    ebgp.addRsPeer(100, 150)
-    ebgp.addRsPeer(100, 151)
-    ebgp.addRsPeer(100, 152)
-
+    #ebgp.addRsPeer(100, 150)
+    #ebgp.addRsPeer(100, 151)
+    #ebgp.addRsPeer(100, 152)
+    
+    ebgp.addPrivatePeering(100, 150, 151, abRelationship=PeerRelationship.Unfiltered)
+    ebgp.addPrivatePeering(100, 151, 152, abRelationship=PeerRelationship.Unfiltered)
 
     ###############################################################################
     # Rendering 

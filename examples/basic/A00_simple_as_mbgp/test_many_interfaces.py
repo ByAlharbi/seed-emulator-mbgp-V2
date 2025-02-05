@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 
-from seedemu.layers import Base, Routing, Ebgp
-from seedemu.services import WebService
+from seedemu.layers import Base, Routing, Ebgp, Mbgp, PeerRelationship
 from seedemu.compiler import Docker, Platform
-from seedemu.core import Emulator, Binding, Filter
+from seedemu.core import Emulator
 import sys, os, subprocess
 
 def run(dumpfile = None):
@@ -32,67 +31,47 @@ def run(dumpfile = None):
     base    = Base()
     routing = Routing()
     ebgp    = Ebgp()
-    web     = WebService()
+    mbgp    = Mbgp()
 
     ###############################################################################
-    # Create an Internet Exchange
+   # Create an Internet Exchange
     base.createInternetExchange(100)
+    base.createInternetExchange(101)
 
     ###############################################################################
-    # Create and set up AS-150
+    # Create AS-149
 
-    # Create an autonomous system 
+    as149 = base.createAutonomousSystem(149)
+    as149.createNetwork('net0')
+    as149.createRouter('router0').joinNetwork('net0').joinNetwork('ix100')
+
+    ###############################################################################
+    # Create AS-150
+
     as150 = base.createAutonomousSystem(150)
-
-    # Create a network 
     as150.createNetwork('net0')
-
-    # Create a router and connect it to two networks
-    as150.createRouter('router0').joinNetwork('net0').joinNetwork('ix100')
-
-    # Create a host called web and connect it to a network
-    as150.createHost('web').joinNetwork('net0')
-
-    # Create a web service on virtual node, give it a name
-    # This will install the web service on this virtual node
-    web.install('web150')
-
-    # Bind the virtual node to a physical node 
-    emu.addBinding(Binding('web150', filter = Filter(nodeName = 'web', asn = 150)))
-
+    as150.createRouter('router0').joinNetwork('net0').joinNetwork('ix100').joinNetwork('ix101')
 
     ###############################################################################
-    # Create and set up AS-151
-    # It is similar to what is done to AS-150
+    # Create AS-151
 
     as151 = base.createAutonomousSystem(151)
     as151.createNetwork('net0')
-    as151.createRouter('router0').joinNetwork('net0').joinNetwork('ix100')
-
-    as151.createHost('web').joinNetwork('net0')
-    web.install('web151')
-    emu.addBinding(Binding('web151', filter = Filter(nodeName = 'web', asn = 151)))
+    as151.createRouter('router0').joinNetwork('net0').joinNetwork('ix101')
 
     ###############################################################################
-    # Create and set up AS-152
-    # It is similar to what is done to AS-150
+    # Create a Real-World AS (Syracuse University's AS11872)
 
-    as152 = base.createAutonomousSystem(152)
-    as152.createNetwork('net0')
-    as152.createRouter('router0').joinNetwork('net0').joinNetwork('ix100')
-
-    as152.createHost('web').joinNetwork('net0')
-    web.install('web152')
-    emu.addBinding(Binding('web152', filter = Filter(nodeName = 'web', asn = 152)))
-
+    as11872 = base.createAutonomousSystem(11872)
+    as11872.createRealWorldRouter('rw').joinNetwork('ix101', '10.101.0.118')
 
     ###############################################################################
-    # Peering these ASes at Internet Exchange IX-100
-
-    ebgp.addRsPeer(100, 150)
-    ebgp.addRsPeer(100, 151)
-    ebgp.addRsPeer(100, 152)
-
+    # bgp Peering (Private Peering)
+    ebgp.addPrivatePeering(101, 151, 11872, abRelationship=PeerRelationship.Unfiltered)
+    
+    # Mbgp Peering (Private Peering)
+    mbgp.addPrivatePeering(100, 149, 150, abRelationship=PeerRelationship.Unfiltered)
+    mbgp.addPrivatePeering(101, 150, 151, abRelationship=PeerRelationship.Unfiltered)
 
     ###############################################################################
     # Rendering 
@@ -100,7 +79,9 @@ def run(dumpfile = None):
     emu.addLayer(base)
     emu.addLayer(routing)
     emu.addLayer(ebgp)
-    emu.addLayer(web)
+    emu.addLayer(mbgp)
+    
+
 
     if dumpfile is not None:
         emu.dump(dumpfile)
@@ -110,6 +91,9 @@ def run(dumpfile = None):
         ###############################################################################
         # Compilation
         emu.compile(Docker(platform=platform), './output', override=True)
-        subprocess.run(["./copy_bird_dir.sh"], check=True)
+        # add /bird to each router dir for build.
+        subprocess.run(["./copy_bird_dir.sh"], check=True) 
+
 if __name__ == '__main__':
     run()
+
