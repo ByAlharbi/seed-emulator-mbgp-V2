@@ -1,0 +1,277 @@
+[EV-SCHEDULE] Scheduling event 0x5d48630af598 (hook: 0x5d4862fa5a50) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48630af598 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d48630af598 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d48630af598 (hook: 0x5d4862fa5a50) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48630af598 active before scheduling: YES
+[EV-SCHEDULE-COMPLETE] Event 0x5d48630af598 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d48630af598 (hook: 0x5d4862fa5a50) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48630af598 active before scheduling: YES
+[EV-SCHEDULE-COMPLETE] Event 0x5d48630af598 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d48630af598 (hook: 0x5d4862fa5a50) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48630af598 active before scheduling: YES
+[EV-SCHEDULE-COMPLETE] Event 0x5d48630af598 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d48630af598 (hook: 0x5d4862fa5a50) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48630af598 active before scheduling: YES
+[EV-SCHEDULE-COMPLETE] Event 0x5d48630af598 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d48630af598 (hook: 0x5d4862fa5a50) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48630af598 active before scheduling: YES
+[EV-SCHEDULE-COMPLETE] Event 0x5d48630af598 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d48630af598 (hook: 0x5d4862fa5a50) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48630af598 active before scheduling: YES
+[EV-SCHEDULE-COMPLETE] Event 0x5d48630af598 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d48630af598 (hook: 0x5d4862fa5a50) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48630af598 active before scheduling: YES
+[EV-SCHEDULE-COMPLETE] Event 0x5d48630af598 scheduled
+MBGP Successfully added channel for MBGPMBGP Successfully added channel for MBGP[EV-SCHEDULE] Scheduling event 0x5d4886557450 (hook: 0x5d4862fff330) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886557450 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886557450 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d48865589e0 (hook: 0x5d4862fff330) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48865589e0 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d48865589e0 scheduled
+[EV-SCHEDULE-WORK] Scheduling work event 0x5d48865843a0 (hook: 0x5d4862ffb4c0) to global_work_list
+[EV-SCHEDULE-WORK-CHECK] Event 0x5d48865843a0 active before scheduling: NO
+[EV-SCHEDULE-WORK-ADDED] Event 0x5d48865843a0 added to global_work_list
+[EV-SCHEDULE] Scheduling event 0x5d4886558d40 (hook: 0x5d4862fff330) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886558d40 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886558d40 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d4886559250 (hook: 0x5d4862fff330) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886559250 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886559250 scheduled
+[EV-SCHEDULE-WORK] Scheduling work event 0x5d4886584d00 (hook: 0x5d4862ffb4c0) to global_work_list
+[EV-SCHEDULE-WORK-CHECK] Event 0x5d4886584d00 active before scheduling: NO
+[EV-SCHEDULE-WORK-ADDED] Event 0x5d4886584d00 added to global_work_list
+[EV-SCHEDULE-WORK] Scheduling work event 0x5d4886585170 (hook: 0x5d4862ffb4c0) to global_work_list
+[EV-SCHEDULE-WORK-CHECK] Event 0x5d4886585170 active before scheduling: NO
+[EV-SCHEDULE-WORK-ADDED] Event 0x5d4886585170 added to global_work_list
+[EV-SCHEDULE] Scheduling event 0x5d4886559760 (hook: 0x5d4862fff330) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886559760 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886559760 scheduled
+[EV-SCHEDULE-WORK] Scheduling work event 0x5d4886585620 (hook: 0x5d4862ffb4c0) to global_work_list
+[EV-SCHEDULE-WORK-CHECK] Event 0x5d4886585620 active before scheduling: NO
+[EV-SCHEDULE-WORK-ADDED] Event 0x5d4886585620 added to global_work_list
+[EV-SCHEDULE-WORK] Scheduling work event 0x5d4886585bc0 (hook: 0x5d4862ffb4c0) to global_work_list
+[EV-SCHEDULE-WORK-CHECK] Event 0x5d4886585bc0 active before scheduling: NO
+[EV-SCHEDULE-WORK-ADDED] Event 0x5d4886585bc0 added to global_work_list
+[EV-SCHEDULE] Scheduling event 0x5d4886559c70 (hook: 0x5d4862fff330) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886559c70 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886559c70 scheduled
+[EV-SCHEDULE-WORK] Scheduling work event 0x5d4886586070 (hook: 0x5d4862ffb4c0) to global_work_list
+[EV-SCHEDULE-WORK-CHECK] Event 0x5d4886586070 active before scheduling: NO
+[EV-SCHEDULE-WORK-ADDED] Event 0x5d4886586070 added to global_work_list
+[EV-SCHEDULE-WORK] Scheduling work event 0x5d48865864e0 (hook: 0x5d4862ffb4c0) to global_work_list
+[EV-SCHEDULE-WORK-CHECK] Event 0x5d48865864e0 active before scheduling: NO
+[EV-SCHEDULE-WORK-ADDED] Event 0x5d48865864e0 added to global_work_list
+[EV-SCHEDULE] Scheduling event 0x5d4886561110 (hook: 0x5d4862f99d30) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886561110 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886561110 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d4886561250 (hook: 0x5d4862fff330) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886561250 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886561250 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d48865686f0 (hook: 0x5d4862f99d30) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48865686f0 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d48865686f0 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d4886568830 (hook: 0x5d4862fff330) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886568830 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886568830 scheduled
+[EV-SCHEDULE] Scheduling event 0x5d4886568a80 (hook: 0x5d4862fff330) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886568a80 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886568a80 scheduled
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.150
+Welcome to C++, using IP1: 10.100.0.151 and IP2: 10.100.0.150
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.150
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.152
+Welcome to C++, using IP1: 10.100.0.151 and IP2: 10.100.0.152
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.152
+Debug: ips pair addresses are -> local_ip: 10.100.0.151, remote_ip: 10.100.0.150
+I'm in mbgp_rx
+local_ip: 10.100.0.151
+remote_ip: 10.100.0.150
+Server address: 10.100.0.151:50051
+Debug: ips pair addresses are -> local_ip: 10.100.0.151, remote_ip: 10.100.0.152
+I'm in mbgp_rx
+local_ip: 10.100.0.151
+remote_ip: 10.100.0.152
+Server address: [EV-SCHEDULE] Scheduling event 0x5d48630af598 (hook: 0x5d4862fa5a50) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48630af598 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d48630af598 scheduled
+10.100.0.151:50051
+Server listening on 10.100.0.151:50051
+Server listening on 10.100.0.151:50051
+[EV-SCHEDULE-WORK] Scheduling work event 0x5d4886589780 (hook: 0x5d4862ffb4c0) to global_work_list
+[EV-SCHEDULE-WORK-CHECK] Event 0x5d4886589780 active before scheduling: NO
+[EV-SCHEDULE-WORK-ADDED] Event 0x5d4886589780 added to global_work_list
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.150
+C++ Cheching peer server at remote IP10.100.0.150at from local IP: 10.100.0.151
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.150
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+[C-ENCODE-START][1745098029] Starting to encode route 10.151.0.0/24
+[C-CONNECTION-STATUS][1745098029] Not connected, storing route for later
+[C-INFO][1745098029] Connection not established, storing route update to 10.151.0.0/24 for later
+[TIMESTAMP: 1745098029628 ms] ASYNC SERVER: Processing status request
+[TIMESTAMP: 1745098029629 ms] Server is up
+[TIMESTAMP: 1745098029629 ms] Router B is up.
+[C-STATUS-UPDATE-START][1745098029] Starting protocol status update for 10.100.0.150
+[C][1745098029] MBGP instance with remote IP 10.100.0.150 found
+[C-STATUS-DIRECT-UPDATE][1745098029] Directly updating connection status
+[C-CONNECTION-STATUS-UPDATED][1745098029] Connection status set to CONNECTED
+[C-PROCESSING-STORED-ROUTES][1745098029] Processing stored routes
+[C-STORED-ROUTES-START][1745098029] Starting to process stored routes
+[C-STORED-ROUTE][1745098029] Processing stored route with update type UPDATE
+[C-BATCH-LOCK-STORED][1745098029] Locking batch mutex for stored route
+[C-BATCH-UNLOCK-STORED][1745098029] Batch mutex unlocked
+[EV-SCHEDULE] Scheduling event 0x5d4886561210 (hook: 0x5d4862fb25b0) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886561210 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886561210 scheduled
+[C-STORED-ROUTES-END][1745098029] Completed processing all stored routes
+[C-FORCE-PROCESS-BATCH][1745098029] Force processing batch after status update
+=== SENDING BATCH OF 1 ROUTES ===
+Route 1: Prefix: 10.151.0.0/24, Next Hop: 10.100.0.151, Update Type: UPDATE
+  AS Path: 151 
+=== END OF BATCH ===
+
+[C-DEBUG][1745098029] Direct call to C++ with batch of 1 routes
+[CPP-CONNECTOR-DEBUG][1745098029] Received batch request from C with 1 routes
+[TIMESTAMP: 1745098029629 ms] BATCH REQUEST: Preparing to send 1 routes
+[C-STORED-ROUTES-PROCESSED][1745098029] Completed processing stored routes
+[C-STATUS-UPDATE-END][1745098029] Finished protocol status update
+[TIMESTAMP: 1745098029629 ms] ASYNC TX: Beginning transmission of batch with 1 routes
+Client attempting to connect to 10.100.0.150:50051 to send batch of 1 routes
+BATCH DATA CHECK: 
+Route 0: Prefix=10.151.0.0/24, Next-hop=10.100.0.151, Type=UPDATE, Remote IP=10.100.0.150
+[CPP-CLIENT-DEBUG][1745098029] Starting client batch processing for 1 routes
+[TIMESTAMP: 1745098029648 ms] ASYNC SERVER: Processing status request
+[TIMESTAMP: 1745098029661 ms] Server is up
+No active stream, establishing a new one...
+Waiting for batch stream to become ready...
+Creating bidirectional stream...
+Bidirectional stream created successfully
+Batch stream established, will remain active for 300 seconds of inactivity
+Batch stream is ready for sending data
+Preparing to send batch with 1 routes:
+  Route 0: Prefix=10.151.0.0/24, Next-hop=10.100.0.151, Type=UPDATE, Origin=0
+Batch reader thread started
+[TIMESTAMP: 1745098029661 ms] ASYNC CLIENT: Sending batch with 1 routes via stream
+Successfully wrote 1 routes to stream
+Successfully sent batch of 1 routes
+[TIMESTAMP: 1745098029662 ms] ASYNC TX: Completed transmission of batch with 1 routes
+[Server] New batch streaming connection established from 10.100.0.150
+[Server] Registered new stream with tag 0x7202e400cdc0
+[TIMESTAMP: 1745098029679 ms] ASYNC SERVER: Processing batch stream request 1 with 1 routes
+[Server] Processing batch stream request 1 from 10.100.0.150 with 1 routes
+[CPP-SERVER-DEBUG][1745098029] Server received batch stream request with 1 routes
+[CPP-SERVER-DEBUG][1745098029] Spawned thread to process batch, returning control
+[TIMESTAMP: 1745098029680 ms] ASYNC PROCESSING: Starting to process batch of 1 routes
+Received batch with 1 routes from C++
+Route 1: Prefix: 10.150.0.0/24, Next Hop: 10.100.0.150, Origin: 0, Update Type: UPDATE
+  AS Path: 150 
+[CPP-CONNECTOR-DEBUG][1745098029] Completed processing batch, returning to C
+[C-DECODE-BATCH-START][1745098029] Starting to decode batch at timestamp: 1745098029680 ms
+[C][1745098029] MBGP instance with remote IP 10.100.0.150 found
+[C-PROCESS-ROUTE][1745098029] Processing route 1/1
+Attempting to enqueue route: 10.150.0.0/24 for protocol instance: x_as150
+Enqueued route with prefix: 10.150.0.0/24 for protocol instance: x_as150
+[C-ROUTE-QUEUED][1745098029] Route 1 queued in 0 ms
+[C-SCHEDULE][1745098029] Scheduling immediate route processing
+[EV-SCHEDULE] Scheduling event 0x5d4886561150 (hook: 0x5d4862fa61a0) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886561150 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886561150 scheduled
+[C-BATCH-COMPLETE][1745098029] Batch processing completed in 0 ms
+[TIMESTAMP: 1745098029680 ms] ASYNC PROCESSING: Completed processing batch of 1 routes
+Received batch response: Batch processing started, processed: 1 routes
+[CPP-CLIENT-DEBUG][1745098029] Received confirmation of batch processing, client work complete
+[EV-SCHEDULE-WORK] Scheduling work event 0x5d4886589e10 (hook: 0x5d4862ffb4c0) to global_work_list
+[EV-SCHEDULE-WORK-CHECK] Event 0x5d4886589e10 active before scheduling: NO
+[EV-SCHEDULE-WORK-ADDED] Event 0x5d4886589e10 added to global_work_list
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.152
+C++ Cheching peer server at remote IP10.100.0.152at from local IP: 10.100.0.151
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.152
+[C-PROCESS-DETAIL][1745098029] Process batch called at timestamp: 1745098029798 ms, event pointer: 0x5d4886561210
+[C-PROCESS-START][1745098029] Starting to process batch with 0 routes
+[C-BATCH-LOCK2-START][1745098029] About to lock batch mutex for processing
+[C-BATCH-LOCK2-END][1745098029] Batch mutex locked for processing
+[C-BATCH-EMPTY][1745098029] No routes in batch to process
+[C-BATCH-unlock2-END][1745098029] Finished adding route to batch (size: 0)
+[C-PROCESS-END][1745098029] Completed processing batch in 0 ms
+[C-ERROR] Failed to parse prefix: 10.150.0.0/24
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+[C-ENCODE-START][1745098029] Starting to encode route 10.151.0.0/24
+[C-CONNECTION-STATUS][1745098029] Not connected, storing route for later
+[C-INFO][1745098029] Connection not established, storing route update to 10.151.0.0/24 for later
+[TIMESTAMP: 1745098029802 ms] ASYNC SERVER: Processing status request
+[TIMESTAMP: 1745098029802 ms] Server is up
+[TIMESTAMP: 1745098029802 ms] Router B is up.
+[C-STATUS-UPDATE-START][1745098029] Starting protocol status update for 10.100.0.152
+[C][1745098029] MBGP instance with remote IP 10.100.0.152 found
+[C-STATUS-DIRECT-UPDATE][1745098029] Directly updating connection status
+[C-CONNECTION-STATUS-UPDATED][1745098029] Connection status set to CONNECTED
+[C-PROCESSING-STORED-ROUTES][1745098029] Processing stored routes
+[C-STORED-ROUTES-START][1745098029] Starting to process stored routes
+[C-STORED-ROUTE][1745098029] Processing stored route with update type UPDATE
+[C-BATCH-LOCK-STORED][1745098029] Locking batch mutex for stored route
+[C-BATCH-UNLOCK-STORED][1745098029] Batch mutex unlocked
+[EV-SCHEDULE] Scheduling event 0x5d48865687f0 (hook: 0x5d4862fb25b0) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d48865687f0 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d48865687f0 scheduled
+[C-STORED-ROUTES-END][1745098029] Completed processing all stored routes
+[C-FORCE-PROCESS-BATCH][1745098029] Force processing batch after status update
+=== SENDING BATCH OF 1 ROUTES ===
+Route 1: Prefix: 10.151.0.0/24, Next Hop: 10.100.0.151, Update Type: UPDATE
+  AS Path: 151 
+=== END OF BATCH ===
+
+[C-DEBUG][1745098029] Direct call to C++ with batch of 1 routes
+[CPP-CONNECTOR-DEBUG][1745098029] Received batch request from C with 1 routes
+[TIMESTAMP: 1745098029802 ms] BATCH REQUEST: Preparing to send 1 routes
+[C-STORED-ROUTES-PROCESSED][1745098029] Completed processing stored routes
+[C-STATUS-UPDATE-END][1745098029] Finished protocol status update
+[TIMESTAMP: 1745098029803 ms] ASYNC TX: Beginning transmission of batch with 1 routes
+Client attempting to connect to 10.100.0.152:50051 to send batch of 1 routes
+BATCH DATA CHECK: 
+Route 0: Prefix=10.151.0.0/24, Next-hop=10.100.0.151, Type=UPDATE, Remote IP=10.100.0.152
+[CPP-CLIENT-DEBUG][1745098029] Starting client batch processing for 1 routes
+[TIMESTAMP: 1745098029822 ms] Server is up
+No active stream, establishing a new one...
+Waiting for batch stream to become ready...
+[TIMESTAMP: 1745098029823 ms] ASYNC SERVER: Processing status request
+Creating bidirectional stream...
+Bidirectional stream created successfully
+Batch stream established, will remain active for 300 seconds of inactivity
+Batch reader thread started
+Batch stream is ready for sending data
+Preparing to send batch with 1 routes:
+  Route 0: Prefix=10.151.0.0/24, Next-hop=10.100.0.151, Type=UPDATE, Origin=0
+[TIMESTAMP: 1745098029824 ms] ASYNC CLIENT: Sending batch with 1 routes via stream
+Successfully wrote 1 routes to stream
+Successfully sent batch of 1 routes
+[TIMESTAMP: 1745098029824 ms] ASYNC TX: Completed transmission of batch with 1 routes
+[Server] New batch streaming connection established from 10.100.0.152
+[Server] Registered new stream with tag 0x7202e400f800
+[TIMESTAMP: 1745098029854 ms] ASYNC SERVER: Processing batch stream request 2 with 1 routes
+[Server] Processing batch stream request 2 from 10.100.0.152 with 1 routes
+[CPP-SERVER-DEBUG][1745098029] Server received batch stream request with 1 routes
+[CPP-SERVER-DEBUG][1745098029] Spawned thread to process batch, returning control
+[TIMESTAMP: 1745098029854 ms] ASYNC PROCESSING: Starting to process batch of 1 routes
+Received batch with 1 routes from C++
+Route 1: Prefix: 10.152.0.0/24, Next Hop: 10.100.0.152, Origin: 0, Update Type: UPDATE
+  AS Path: 152 
+[CPP-CONNECTOR-DEBUG][1745098029] Completed processing batch, returning to C
+[C-DECODE-BATCH-START][1745098029] Starting to decode batch at timestamp: 1745098029854 ms
+[C][1745098029] MBGP instance with remote IP 10.100.0.152 found
+[C-PROCESS-ROUTE][1745098029] Processing route 1/1
+Attempting to enqueue route: 10.152.0.0/24 for protocol instance: x_as152
+Enqueued route with prefix: 10.152.0.0/24 for protocol instance: x_as152
+[C-ROUTE-QUEUED][1745098029] Route 1 queued in 0 ms
+[C-SCHEDULE][1745098029] Scheduling immediate route processing
+[EV-SCHEDULE] Scheduling event 0x5d4886568730 (hook: 0x5d4862fa61a0) to global_event_list
+[EV-SCHEDULE-CHECK] Event 0x5d4886568730 active before scheduling: NO
+[EV-SCHEDULE-COMPLETE] Event 0x5d4886568730 scheduled
+[C-BATCH-COMPLETE][1745098029] Batch processing completed in 0 ms
+[TIMESTAMP: 1745098029854 ms] ASYNC PROCESSING: Completed processing batch of 1 routes
+Received batch response: Batch processing started, processed: 1 routes
+[CPP-CLIENT-DEBUG][1745098029] Received confirmation of batch processing, client work complete

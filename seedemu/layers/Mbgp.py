@@ -27,9 +27,9 @@ MbgpFileTemplates["mbgp_peer"] = """
 # Define the template for a standard BGP peer without filtering
 MbgpFileTemplates["bfd_mbgp_peer"] = """
     interface "{interface_name}" {{
-        min rx interval 500 ms;
-        min tx interval 500 ms;
-        multiplier 5;
+        min rx interval 50 ms;
+        min tx interval 50 ms;
+        multiplier 3;
     }};
 """
 

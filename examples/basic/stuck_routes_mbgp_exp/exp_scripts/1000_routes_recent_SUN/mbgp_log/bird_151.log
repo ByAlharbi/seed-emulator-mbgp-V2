@@ -1,0 +1,129 @@
+MBGP Successfully added channel for MBGPMBGP Successfully added channel for MBGPRoute queue is empty for protocol instance: x_as150
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.150
+Welcome to C++, using IP1: 10.100.0.151 and IP2: 10.100.0.150
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.150
+Route queue is empty for protocol instance: x_as152
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.152
+Welcome to C++, using IP1: 10.100.0.151 and IP2: 10.100.0.152
+Created ips_pair with local_ip: Debug: ips pair addresses are -> local_ip: 10.100.0.151, remote_ip: 10.100.0.150
+I'm in mbgp_rx
+local_ip: 10.100.0.151
+remote_ip: 10.100.0.150
+Server address: 10.100.0.151:50051
+10.100.0.151 and remote_ip: 10.100.0.152
+Debug: ips pair addresses are -> local_ip: 10.100.0.151, remote_ip: 10.100.0.152
+I'm in mbgp_rx
+local_ip: 10.100.0.151
+remote_ip: 10.100.0.152
+Server address: 10.100.0.151:50051
+Server listening on 10.100.0.151:50051
+Server listening on 10.100.0.151:50051
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.150
+C++ Cheching peer server at remote IP10.100.0.150at from local IP: 10.100.0.151
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.150
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+[C-ENCODE-START][1745272356] Starting to encode route 10.151.0.0/24
+[C-CONNECTION-STATUS][1745272356] Not connected, storing route for later
+[C-INFO][1745272356] Connection not established, storing route update to 10.151.0.0/24 for later
+[TIMESTAMP: 1745272356043 ms] ASYNC SERVER: Processing status request
+[TIMESTAMP: 1745272356043 ms] Server is up
+[TIMESTAMP: 1745272356044 ms] Router B is up.
+[C-STATUS-UPDATE-START][1745272356] Starting protocol status update for 10.100.0.150
+[C][1745272356] MBGP instance with remote IP 10.100.0.150 found
+[C-STATUS-DIRECT-UPDATE][1745272356] Directly updating connection status
+[C-CONNECTION-STATUS-UPDATED][1745272356] Connection status set to CONNECTED
+[C-PROCESSING-STORED-ROUTES][1745272356] Processing stored routes
+[C-STORED-ROUTES-START][1745272356] Starting to process stored routes
+[C-STORED-ROUTE][1745272356] Processing stored route with update type UPDATE
+[C-BATCH-LOCK-STORED][1745272356] Locking batch mutex for stored route
+[C-BATCH-UNLOCK-STORED][1745272356] Batch mutex unlocked
+[C-STORED-ROUTES-END][1745272356] Completed processing all stored routes
+[C-FORCE-PROCESS-BATCH][1745272356] Force processing batch after status update
+=== SENDING BATCH OF 1 ROUTES ===
+Route 1: Prefix: 10.151.0.0/24, Next Hop: 10.100.0.151, Update Type: UPDATE
+  AS Path: 151 
+=== END OF BATCH ===
+
+[C-DEBUG][1745272356] Direct call to C++ with batch of 1 routes
+[CPP-CONNECTOR-DEBUG][1745272356] Received batch request from C with 1 routes
+[TIMESTAMP: 1745272356044 ms] BATCH REQUEST: Preparing to send 1 routes
+[C-STORED-ROUTES-PROCESSED][1745272356] Completed processing stored routes
+[C-STATUS-UPDATE-END][1745272356] Finished protocol status update
+[TIMESTAMP: 1745272356044 ms] ASYNC TX: Beginning transmission of batch with 0 routes
+Client attempting to connect to 10.100.0.150:50051 to send batch of 0 routes
+BATCH DATA CHECK: 
+[CPP-CLIENT-DEBUG][1745272356] Starting client batch processing for 0 routes
+Server is not up. Status: Socket closed
+Server not available. Will try again later.
+[TIMESTAMP: 1745272356064 ms] ASYNC SERVER: Processing status request
+[TIMESTAMP: 1745272356074 ms] ASYNC SERVER: Processing status request
+[TIMESTAMP: 1745272356094 ms] ASYNC SERVER: Processing status request
+[C-PROCESS-START][1745272356] Starting to process batch
+[C-BATCH-LOCK2-START][1745272356] About to lock batch mutex for processing
+[C-BATCH-LOCK2-END][1745272356] Batch mutex locked for processing
+[C-BATCH-unlock2-END][1745272356] Batch mutex unlocked after copying
+[C-PROCESS-END][1745272356] Completed processing batch
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.152
+C++ Cheching peer server at remote IP10.100.0.152at from local IP: 10.100.0.151
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.152
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+[C-ENCODE-START][1745272356] Starting to encode route 10.151.0.0/24
+[C-CONNECTION-STATUS][1745272356] Not connected, storing route for later
+[C-INFO][1745272356] Connection not established, storing route update to 10.151.0.0/24 for later
+[TIMESTAMP: 1745272356196 ms] Server is up
+[TIMESTAMP: 1745272356196 ms] Router B is up.
+[C-STATUS-UPDATE-START][1745272356] Starting protocol status update for 10.100.0.152
+[C][1745272356] MBGP instance with remote IP 10.100.0.152 found
+[C-STATUS-DIRECT-UPDATE][1745272356] Directly updating connection status
+[C-CONNECTION-STATUS-UPDATED][1745272356] Connection status set to CONNECTED
+[C-PROCESSING-STORED-ROUTES][1745272356] Processing stored routes
+[C-STORED-ROUTES-START][1745272356] Starting to process stored routes
+[C-STORED-ROUTE][1745272356] Processing stored route with update type UPDATE
+[C-BATCH-LOCK-STORED][1745272356] Locking batch mutex for stored route
+[C-BATCH-UNLOCK-STORED][1745272356] Batch mutex unlocked
+[C-STORED-ROUTES-END][1745272356] Completed processing all stored routes
+[C-FORCE-PROCESS-BATCH][1745272356] Force processing batch after status update
+=== SENDING BATCH OF 1 ROUTES ===
+Route 1: Prefix: 10.151.0.0/24, Next Hop: 10.100.0.151, Update Type: UPDATE
+  AS Path: 151 
+=== END OF BATCH ===
+
+[C-DEBUG][1745272356] Direct call to C++ with batch of 1 routes
+[CPP-CONNECTOR-DEBUG][1745272356] Received batch request from C with 1 routes
+[TIMESTAMP: 1745272356196 ms] BATCH REQUEST: Preparing to send 1 routes
+[C-STORED-ROUTES-PROCESSED][1745272356] Completed processing stored routes
+[C-STATUS-UPDATE-END][1745272356] Finished protocol status update
+[TIMESTAMP: 1745272356196 ms] ASYNC TX: Beginning transmission of batch with 0 routes
+Client attempting to connect to 10.100.0.152:50051 to send batch of 0 routes
+BATCH DATA CHECK: 
+[CPP-CLIENT-DEBUG][1745272356] Starting client batch processing for 0 routes
+[TIMESTAMP: 1745272356199 ms] ASYNC SERVER: Processing status request
+[TIMESTAMP: 1745272356216 ms] Server is up
+No active stream, establishing a new one...
+Waiting for batch stream to become ready...
+Creating bidirectional stream...
+Bidirectional stream created successfully
+Batch stream established, will remain active for 300 seconds of inactivity
+Batch reader thread started
+Batch stream is ready for sending data
+Sending batch #1 with 0 routes
+[TIMESTAMP: 1745272356217 ms] ASYNC CLIENT: Sending batch with 0 routes via stream (attempt 1)
+Successfully wrote 0 routes to stream
+Successfully sent batch #1 with 0 routes
+[TIMESTAMP: 1745272356217 ms] ASYNC TX: Completed transmission of batch #1 with 0 routes (success=true)
+[TIMESTAMP: 1745272356219 ms] ASYNC SERVER: Processing status request
+[Server] New batch streaming connection established from 10.100.0.152
+[Server] Registered new stream with tag 0x7e47500054e0
+Received batch response: Batch processing started, processed: 0 routes
+[CPP-CLIENT-DEBUG][1745272356] Received confirmation of batch processing, client work complete
+[TIMESTAMP: 1745272356250 ms] ASYNC SERVER: Processing batch stream request 1 with 0 routes
+[Server] Processing batch stream request 1 from 10.100.0.152 with 0 routes
+[CPP-SERVER-DEBUG][1745272356] Server received batch stream request with 0 routes
+[CPP-SERVER-DEBUG][1745272356] Spawned thread to process batch, returning control
+Error: Invalid batch data to process!

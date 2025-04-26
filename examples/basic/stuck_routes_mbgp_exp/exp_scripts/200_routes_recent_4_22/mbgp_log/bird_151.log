@@ -1,0 +1,41 @@
+Route queue is empty for protocol instance: x_as150
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.150
+Welcome to C++, using IP1: 10.100.0.151 and IP2: 10.100.0.150
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.150
+Route queue is empty for protocol instance: x_as152
+Debug: ips pair addresses are -> local_ip: 10.100.0.151, remote_ip: 10.100.0.150Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.152
+Welcome to C++, using IP1: 10.100.0.151 and IP2: 10.100.0.152
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.152
+
+I'm in mbgp_rx
+local_ip: 10.100.0.151
+remote_ip: 10.100.0.150
+Server address: 10.100.0.151:50051
+Debug: ips pair addresses are -> local_ip: 10.100.0.151, remote_ip: 10.100.0.152
+I'm in mbgp_rx
+local_ip: 10.100.0.151
+remote_ip: 10.100.0.152
+Server address: 10.100.0.151:50051
+Server listening on 10.100.0.151:50051
+Server listening on 10.100.0.151:50051
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.152
+C++ Cheching peer server at remote IP10.100.0.152at from local IP: 10.100.0.151
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.152
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+[TIMESTAMP: 1745361201693 ms] ASYNC SERVER: Processing status request
+Server is up
+Router B is up.
+MBGP instance with remote IP 10.100.0.152 found
+Initialized local_ip: 10.100.0.151
+Initialized remote_ip: 10.100.0.150
+C++ Cheching peer server at remote IP10.100.0.150at from local IP: 10.100.0.151
+Created ips_pair with local_ip: 10.100.0.151 and remote_ip: 10.100.0.150
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+[TIMESTAMP: 1745361201852 ms] ASYNC SERVER: Processing status request
+Server is up
+Router B is up.

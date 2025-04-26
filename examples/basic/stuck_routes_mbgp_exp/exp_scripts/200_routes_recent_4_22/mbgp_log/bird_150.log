@@ -1,0 +1,649 @@
+Route queue is empty for protocol instance: x_as149
+Initialized local_ip: 10.100.0.150
+Initialized remote_ip: 10.100.0.149
+Welcome to C++, using IP1: 10.100.0.150 and IP2: 10.100.0.149
+Created ips_pair with local_ip: 10.100.0.150 and remote_ip: 10.100.0.149
+Route queue is empty for protocol instance: x_as151
+Initialized local_ip: 10.100.0.150
+Initialized remote_ip: 10.100.0.151
+Welcome to C++, using IP1: 10.100.0.150 and IP2: 10.100.0.151
+Created ips_pair with local_ip: 10.100.0.150 and remote_ip: Debug: ips pair addresses are -> local_ip: 10.100.0.150, remote_ip: 10.100.0.149
+I'm in mbgp_rx
+local_ip: 10.100.0.150
+remote_ip: 10.100.0.149
+10.100.0.151
+Server address: 10.100.0.150:50051
+Debug: ips pair addresses are -> local_ip: 10.100.0.150, remote_ip: 10.100.0.151
+I'm in mbgp_rx
+local_ip: 10.100.0.150
+remote_ip: 10.100.0.151
+Server address: 10.100.0.150:50051
+Server listening on 10.100.0.150:50051
+Server listening on 10.100.0.150:50051
+Initialized local_ip: 10.100.0.150
+Initialized remote_ip: 10.100.0.149
+C++ Cheching peer server at remote IP10.100.0.149at from local IP: 10.100.0.150
+Created ips_pair with local_ip: 10.100.0.150 and remote_ip: 10.100.0.149
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+[TIMESTAMP: 1745361201773 ms] ASYNC SERVER: Processing status request
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+Server is up
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+Router B is up.
+MBGP instance with remote IP 10.100.0.149 found
+Initialized local_ip: 10.100.0.150
+Initialized remote_ip: 10.100.0.151
+C++ Cheching peer server at remote IP10.100.0.151at from local IP: 10.100.0.150
+Created ips_pair with local_ip: 10.100.0.150 and remote_ip: 10.100.0.151
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+[TIMESTAMP: 1745361201852 ms] ASYNC SERVER: Processing status request
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+Server is up
+MBGP: I'm in mbgp_rt_notify
+------------- MBGP: I'm in mbgp_rt_notify -- NEW ROUTE 
+Router B is up.

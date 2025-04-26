@@ -1,0 +1,78 @@
+
+Exp 1:
+Router 149:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Router 151:
+BIRD 441e23e6 ready.
+4988 of 4999 routes for 4999 networks in table t_bgp
+
+Router 152:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Exp 2:
+Router 149:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Router 151:
+BIRD 441e23e6 ready.
+4988 of 4999 routes for 4999 networks in table t_bgp
+
+Router 152:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Exp 3:
+Router 149:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Router 151:
+BIRD 441e23e6 ready.
+4988 of 4999 routes for 4999 networks in table t_bgp
+
+Router 152:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Exp 4:
+Router 149:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Router 151:
+BIRD 441e23e6 ready.
+4988 of 4999 routes for 4999 networks in table t_bgp
+
+Router 152:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Exp 5:
+Router 149:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Router 151:
+BIRD 441e23e6 ready.
+4988 of 4999 routes for 4999 networks in table t_bgp
+
+Router 152:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Exp 6:
+Router 149:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp
+
+Router 151:
+BIRD 441e23e6 ready.
+4988 of 4999 routes for 4999 networks in table t_bgp
+
+Router 152:
+BIRD 441e23e6 ready.
+4998 of 4999 routes for 4999 networks in table t_bgp

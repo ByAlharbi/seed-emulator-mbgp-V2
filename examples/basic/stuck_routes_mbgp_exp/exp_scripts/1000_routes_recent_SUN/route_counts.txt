@@ -1,0 +1,50 @@
+
+Exp 1:
+Router 149:
+BIRD 2.15.1 ready.
+968 of 969 routes for 969 networks in table master4
+
+Router 151:
+BIRD 2.15.1 ready.
+968 of 970 routes for 970 networks in table master4
+
+Router 152:
+BIRD 2.15.1 ready.
+904 of 905 routes for 905 networks in table master4
+
+Exp 2:
+Router 149:
+BIRD 2.15.1 ready.
+968 of 969 routes for 969 networks in table master4
+
+Router 151:
+BIRD 2.15.1 ready.
+956 of 958 routes for 958 networks in table master4
+
+Router 152:
+BIRD 2.15.1 ready.
+953 of 954 routes for 954 networks in table master4
+
+Exp 3:
+Router 149:
+BIRD 2.15.1 ready.
+0 of 1 routes for 1 networks in table master4
+
+Router 151:
+BIRD 2.15.1 ready.
+0 of 1 routes for 1 networks in table master4
+
+Router 152:
+BIRD 2.15.1 ready.
+0 of 1 routes for 1 networks in table master4
+
+Exp 4:
+Router 149:
+
+Router 151:
+BIRD 2.15.1 ready.
+0 of 1 routes for 1 networks in table master4
+
+Router 152:
+BIRD 2.15.1 ready.
+0 of 1 routes for 1 networks in table master4

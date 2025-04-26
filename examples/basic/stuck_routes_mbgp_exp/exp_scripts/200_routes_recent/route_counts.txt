@@ -1,0 +1,39 @@
+
+Exp 1:
+Router 149:
+BIRD 254d7953 ready.
+202 of 203 routes for 203 networks in table master4
+
+Router 151:
+BIRD 254d7953 ready.
+201 of 203 routes for 203 networks in table master4
+
+Router 152:
+BIRD 254d7953 ready.
+202 of 203 routes for 203 networks in table master4
+
+Exp 2:
+Router 149:
+BIRD 254d7953 ready.
+202 of 203 routes for 203 networks in table master4
+
+Router 151:
+BIRD 254d7953 ready.
+201 of 203 routes for 203 networks in table master4
+
+Router 152:
+BIRD 254d7953 ready.
+202 of 203 routes for 203 networks in table master4
+
+Exp 3:
+Router 149:
+BIRD 254d7953 ready.
+202 of 203 routes for 203 networks in table master4
+
+Router 151:
+BIRD 254d7953 ready.
+201 of 203 routes for 203 networks in table master4
+
+Router 152:
+BIRD 254d7953 ready.
+202 of 203 routes for 203 networks in table master4

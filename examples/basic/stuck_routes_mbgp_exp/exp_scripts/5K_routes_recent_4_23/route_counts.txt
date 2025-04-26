@@ -1,0 +1,13 @@
+
+Exp 1:
+Router 149:
+BIRD c7807bc0 ready.
+5400 of 5401 routes for 5401 networks in table master4
+
+Router 151:
+BIRD c7807bc0 ready.
+5400 of 5401 routes for 5401 networks in table master4
+
+Router 152:
+BIRD c7807bc0 ready.
+5400 of 5401 routes for 5401 networks in table master4
