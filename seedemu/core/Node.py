@@ -1000,7 +1000,7 @@ RouterFileTemplates["pipe"] = """\
 protocol pipe {{
     table {src};
     peer table {dst};
-    import {importFilter};
+    import all;
     export {exportFilter};
 }}
 """

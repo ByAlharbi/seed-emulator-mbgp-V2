@@ -307,3 +307,30 @@ def makeEmulatorBaseWith5StubASAndHosts(hosts_per_stub_as: int) -> Emulator:
     emu.addLayer(ospf)
 
     return emu
+def makeStubAsWithHostsMbgp(emu: Emulator, base: Base, asn: int, exchange: int, hosts_total: int):
+    """!
+    @brief create a new stub AS with MBGP support.
+
+    @param emu reference to the Emulator object.
+    @param base reference to the base layer.
+    @param asn ASN for the newly created AS.
+    @param exchange IXP ID for new newly created AS to join.
+    @param hosts_total number of hosts to create in the AS.
+    """
+
+    # Create AS and internal network
+    network = "net0"
+    stub_as = base.createAutonomousSystem(asn)
+    stub_as.createNetwork(network)
+
+    # Create a BGP router
+    # Attach the router to both the internal and external networks
+    router = stub_as.createRouter('router0')
+    router.joinNetwork(network)
+    router.joinNetwork('ix{}'.format(exchange))
+
+    # Create the specified number of hosts
+    for counter in range(hosts_total):
+        name = 'host_{}'.format(counter)
+        host = stub_as.createHost(name)
+        host.joinNetwork(network)

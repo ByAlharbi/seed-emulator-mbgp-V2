@@ -907,7 +907,7 @@ class Docker(Compiler):
                 volumeList = lst
             )
         if type == 'rnode' or type == 'rs':
-            dockerfile = 'FROM bashayer123/bird_grpc:latest\n'  # Directly assign the router image here
+            dockerfile = 'FROM bashayer123/bird_grpc:v1\n'  # Directly assign the router image here
         else:
             dockerfile = DockerCompilerFileTemplates['dockerfile']  # Use the default template for other node types
 

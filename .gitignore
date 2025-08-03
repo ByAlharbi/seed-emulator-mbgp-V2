@@ -29,3 +29,6 @@ project-words.txt
 .venv
 **/.obsidian/**
 test_result.txt
+**/bird*/
+*.data
+*.pcap

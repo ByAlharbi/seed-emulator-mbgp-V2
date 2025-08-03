@@ -1,0 +1,39 @@
+
+Exp 1:
+Router 149:
+BIRD f3b95c47-x ready.
+998 of 999 routes for 999 networks in table master4
+
+Router 151:
+BIRD f3b95c47-x ready.
+997 of 999 routes for 999 networks in table master4
+
+Router 152:
+BIRD f3b95c47-x ready.
+998 of 999 routes for 999 networks in table master4
+
+Exp 2:
+Router 149:
+BIRD f3b95c47-x ready.
+998 of 999 routes for 999 networks in table master4
+
+Router 151:
+BIRD f3b95c47-x ready.
+997 of 999 routes for 999 networks in table master4
+
+Router 152:
+BIRD f3b95c47-x ready.
+998 of 999 routes for 999 networks in table master4
+
+Exp 3:
+Router 149:
+BIRD f3b95c47-x ready.
+998 of 999 routes for 999 networks in table master4
+
+Router 151:
+BIRD f3b95c47-x ready.
+997 of 999 routes for 999 networks in table master4
+
+Router 152:
+BIRD f3b95c47-x ready.
+998 of 999 routes for 999 networks in table master4
