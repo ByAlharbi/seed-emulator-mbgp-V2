@@ -102,6 +102,15 @@ def run(dumpfile=None, mbgp_percentage=0):
         Makers.makeStubAsWithHosts(emu, base, 161, 101, 1)
         Makers.makeStubAsWithHosts(emu, base, 162, 102, 1)
         
+    elif mbgp_percentage == 90:
+        # 90% - 5 ASes use MBGP (only AS162 remains BGP)
+        Makers.makeStubAsWithHostsMbgp(emu, base, 150, 100, 1)
+        Makers.makeStubAsWithHostsMbgp(emu, base, 151, 100, 1)
+        Makers.makeStubAsWithHostsMbgp(emu, base, 152, 101, 1)
+        Makers.makeStubAsWithHostsMbgp(emu, base, 160, 102, 1)
+        Makers.makeStubAsWithHostsMbgp(emu, base, 161, 101, 1)
+        Makers.makeStubAsWithHosts(emu, base, 162, 102, 1)
+        
     elif mbgp_percentage == 100:
         # 100% - All MBGP
         Makers.makeStubAsWithHostsMbgp(emu, base, 150, 100, 1)
@@ -131,6 +140,11 @@ def run(dumpfile=None, mbgp_percentage=0):
         
     elif mbgp_percentage == 60:
         # Mostly MBGP route servers
+        mbgp.addRsPeers(100, [2, 3, 4])
+        mbgp.addRsPeers(101, [2, 3])
+        
+    elif mbgp_percentage == 90:
+        # Almost all MBGP route servers
         mbgp.addRsPeers(100, [2, 3, 4])
         mbgp.addRsPeers(101, [2, 3])
         
@@ -192,6 +206,18 @@ def run(dumpfile=None, mbgp_percentage=0):
         mbgp.addPrivatePeerings(102, [4], [160], PeerRelationship.Unfiltered)
         ebgp.addPrivatePeerings(102, [4], [162], PeerRelationship.Unfiltered)
         
+    elif mbgp_percentage == 90:
+        # 90% MBGP - Only AS162 uses BGP
+        mbgp.addPrivatePeerings(100, [2], [150, 151], PeerRelationship.Unfiltered)
+        mbgp.addPrivatePeerings(100, [3], [150], PeerRelationship.Unfiltered)
+        mbgp.addPrivatePeerings(100, [4], [151], PeerRelationship.Unfiltered)
+        mbgp.addPrivatePeerings(101, [2], [152], PeerRelationship.Unfiltered)
+        mbgp.addPrivatePeerings(101, [3], [152, 161], PeerRelationship.Unfiltered)
+        mbgp.addPrivatePeerings(102, [2], [160], PeerRelationship.Unfiltered)
+        ebgp.addPrivatePeerings(102, [2], [162], PeerRelationship.Unfiltered)
+        mbgp.addPrivatePeerings(102, [4], [160], PeerRelationship.Unfiltered)
+        ebgp.addPrivatePeerings(102, [4], [162], PeerRelationship.Unfiltered)
+        
     elif mbgp_percentage == 100:
         # All MBGP peerings
         mbgp.addPrivatePeerings(100, [2], [150, 151], PeerRelationship.Unfiltered)
@@ -205,6 +231,9 @@ def run(dumpfile=None, mbgp_percentage=0):
     # Inter-transit peering
     if mbgp_percentage == 100:
         # Use MBGP for 100% deployment
+        mbgp.addPrivatePeerings(100, [3], [4], PeerRelationship.Unfiltered)
+    elif mbgp_percentage == 90:
+        # Use MBGP for 90% deployment too
         mbgp.addPrivatePeerings(100, [3], [4], PeerRelationship.Unfiltered)
     else:
         # Use BGP for all other scenarios
@@ -224,8 +253,8 @@ def run(dumpfile=None, mbgp_percentage=0):
         output_dir = f'./output_micro_{mbgp_percentage}_mbgp'
         emu.render()
         emu.compile(Docker(platform=platform), output_dir, override=True)
-        if mbgp_percentage > 0:
-            subprocess.run(["./copy_bird_dir.sh", output_dir], check=True)
+        # Always copy bird directory for consistency
+        subprocess.run(["./copy_bird_dir.sh", output_dir], check=True)
         
         print(f"\n{'='*60}")
         print(f"Micro experiment with {mbgp_percentage}% MBGP deployment completed!")
@@ -234,7 +263,7 @@ def run(dumpfile=None, mbgp_percentage=0):
 
 if __name__ == "__main__":
     # Generate all scenarios
-    scenarios = [0, 20, 40, 60, 100]
+    scenarios = [0, 20, 40, 60, 90, 100]
     
     print("Choose which scenario to run:")
     print("1. Single scenario")
@@ -243,7 +272,7 @@ if __name__ == "__main__":
     choice = input("Enter choice (1 or 2): ").strip()
     
     if choice == "1":
-        print("\nAvailable percentages: 0, 20, 40, 60, 100")
+        print("\nAvailable percentages: 0, 20, 40, 60, 90, 100")
         percentage = int(input("Enter MBGP percentage: "))
         if percentage in scenarios:
             run(mbgp_percentage=percentage)

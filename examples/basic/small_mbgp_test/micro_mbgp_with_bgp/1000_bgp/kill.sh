@@ -1,17 +1,18 @@
 #!/bin/bash
-
 router_containers=$(docker ps --format '{{.ID}} {{.Names}}' | grep -E 'router|rs' | awk '{print $1}')
+
 if [[ -z "$router_containers" ]]; then
-  echo "No containers with 'router' in the name found."
+  echo "No containers with 'router' or 'rs' in the name found."
   exit 0
 fi
 
 echo "Found router containers:"
-docker ps --format '{{.Names}}' | grep router
+docker ps --format '{{.Names}}' | grep -E 'router|rs'
 
-# Loop through each container and kill BIRD processes
+# Kill all BIRD processes
+echo "Killing all BIRD processes..."
 for container_id in $router_containers; do
-  echo "#  Killing BIRD processes in container $container_id..."
+  echo "  Killing BIRD processes in container $container_id..."
 
   # Get PIDs of bird processes
   pids=$(docker exec $container_id sh -c "ps aux | grep bird | grep -v grep | awk '{print \$2}'")
@@ -22,10 +23,10 @@ for container_id in $router_containers; do
   fi
 
   for pid in $pids; do
-    echo "#   Killing PID $pid"
+    echo "   Killing PID $pid"
     docker exec $container_id kill -9 $pid
   done
-  echo "--> Done with $container_id"
 done
 
-echo "## All BIRD processes have been killed."
+echo "All BIRD processes have been killed."
+
