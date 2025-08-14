@@ -51,19 +51,7 @@ def run(dumpfile = None):
     as142.createNetwork('net0')
     as142.createRouter('router0').joinNetwork('net0').joinNetwork('ix109')
 
-    ###############################################################################
-    # Create AS-143
-
-    as143 = base.createAutonomousSystem(143)
-    as143.createNetwork('net0')
-    as143.createRouter('router0').joinNetwork('net0').joinNetwork('ix109')
-    ###############################################################################
-    # Create AS-144
-
-    as143 = base.createAutonomousSystem(144)
-    as143.createNetwork('net0')
-    as143.createRouter('router0').joinNetwork('net0').joinNetwork('ix109')
-
+    
     ###############################################################################
     # Create a Real-World AS (Syracuse University's AS11872)
 
@@ -76,8 +64,6 @@ def run(dumpfile = None):
     
     # Mbgp Peering (Private Peering)
     ebgp.addPrivatePeering(109, 141, 142, abRelationship=PeerRelationship.Unfiltered)
-    ebgp.addPrivatePeering(109, 142, 143, abRelationship=PeerRelationship.Unfiltered)
-    ebgp.addPrivatePeering(109, 143, 144, abRelationship=PeerRelationship.Unfiltered)
     ###############################################################################
     # Rendering 
 
@@ -95,9 +81,9 @@ def run(dumpfile = None):
 
         ###############################################################################
         # Compilation
-        emu.compile(Docker(platform=platform), './output_down', override=True)
+        emu.compile(Docker(platform=platform), './output', override=True)
         # add /bird to each router dir for build.
-        #subprocess.run(["./2_copy_bird_dir.sh"], check=True) 
+        subprocess.run(["./2_copy_bird_dir.sh"], check=True) 
 
 if __name__ == '__main__':
     run()
