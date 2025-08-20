@@ -35,21 +35,35 @@ def run(dumpfile = None):
 
     ###############################################################################
    # Create an Internet Exchange
-    base.createInternetExchange(101)
-
+    base.createInternetExchange(102)
+    
     ###############################################################################
-    # Create AS-143
+    # Create AS-146
 
-    as143 = base.createAutonomousSystem(143)
-    as143.createNetwork('net0')
-    as143.createRouter('router0').joinNetwork('net0').joinNetwork('ix101')
+    as146 = base.createAutonomousSystem(146)
+    as146.createNetwork('net0')
+    as146.createRouter('router0').joinNetwork('net0').joinNetwork('ix102')
     ###############################################################################
     # Create AS-144
 
-    as143 = base.createAutonomousSystem(144)
-    as143.createNetwork('net0')
-    as143.createRouter('router0').joinNetwork('net0').joinNetwork('ix101')
+    as147 = base.createAutonomousSystem(147)
+    as147.createNetwork('net0')
+    as147.createRouter('router0').joinNetwork('net0').joinNetwork('ix102')
+    ###############################################################################
+    # Create AS-148
 
+    as148 = base.createAutonomousSystem(148)
+    as148.createNetwork('net0')
+    as148.createRouter('router0').joinNetwork('net0').joinNetwork('ix102')
+    
+    ###############################################################################
+    # Create AS-149
+
+    as149 = base.createAutonomousSystem(149)
+    as149.createNetwork('net0')
+    as149.createRouter('router0').joinNetwork('net0').joinNetwork('ix102')
+
+    
     ###############################################################################
     # Create a Real-World AS (Syracuse University's AS11872)
 
@@ -58,10 +72,13 @@ def run(dumpfile = None):
 
     ###############################################################################
     # bgp Peering (Private Peering)
-    #ebgp.addPrivatePeering(109, 143, 11872, abRelationship=PeerRelationship.Unfiltered)
+    #ebgp.addPrivatePeering(109, 146, 11872, abRelationship=PeerRelationship.Unfiltered)
     
     # Mbgp Peering (Private Peering)
-    ebgp.addPrivatePeering(101, 143, 144, abRelationship=PeerRelationship.Unfiltered)
+    ebgp.addPrivatePeering(102, 146, 147, abRelationship=PeerRelationship.Unfiltered)
+    ebgp.addPrivatePeering(102, 147, 148, abRelationship=PeerRelationship.Unfiltered)
+    ebgp.addPrivatePeering(102, 148, 149, abRelationship=PeerRelationship.Unfiltered)
+ 
     ###############################################################################
     # Rendering 
 
@@ -79,9 +96,9 @@ def run(dumpfile = None):
 
         ###############################################################################
         # Compilation
-        emu.compile(Docker(platform=platform), './output_pure_bgp', override=True)
+        emu.compile(Docker(platform=platform), './output_4_bgp', override=True)
         # add /bird to each router dir for build.
-        #subprocess.run(["./2_copy_bird_dir.sh"], check=True) 
+        subprocess.run(["./copy_bird_dir.sh"], check=True) 
 
 if __name__ == '__main__':
     run()

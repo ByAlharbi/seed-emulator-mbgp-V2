@@ -134,9 +134,9 @@ def main():
     r149_output = "route_141_static_routes.conf"
     
     # Config for Router 150
-    r150_via_ip = "10.109.0.141"
-    r150_routes = 5000
-    r150_output = "route_141_static_routes.conf"
+    r150_via_ip = "10.109.0.142"
+    r150_routes = 20000
+    r150_output = "route_142_static_routes.conf"
     
     # Use completely different seed values
     r149_seed = 987654

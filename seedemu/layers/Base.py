@@ -7,12 +7,35 @@ BaseFileTemplates: Dict[str, str] = {}
 BaseFileTemplates["interface_setup_script"] = """\
 #!/bin/bash
 cidr_to_net() {
-    ipcalc -n "$1" | sed -E -n 's/^Network: +([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\/[0-9]{1,2}) +.*/\\1/p'
+    # Ubuntu 22.04 compatible version
+    # Try to get network from ipcalc, handle different output formats
+    local result
+    result=$(ipcalc -n "$1" 2>/dev/null | grep -E "^Network:" | awk '{print $2}')
+    
+    # If ipcalc didn't work or gave unexpected output, calculate manually
+    if [ -z "$result" ] || [[ ! "$result" =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/[0-9]{1,2}$ ]]; then
+        # Extract IP and prefix
+        local ip="${1%/*}"
+        local prefix="${1#*/}"
+        # For simplicity, just zero out the host bits based on common subnets
+        if [ "$prefix" = "24" ]; then
+            result=$(echo "$ip" | sed -E 's/\.[0-9]+$/\.0/')"/24"
+        elif [ "$prefix" = "16" ]; then
+            result=$(echo "$ip" | sed -E 's/\.[0-9]+\.[0-9]+$/\.0\.0/')"/16"
+        else
+            result="$1"
+        fi
+    fi
+    echo "$result"
 }
 
 ip -j addr | jq -cr '.[]' | while read -r iface; do {
     ifname="`jq -cr '.ifname' <<< "$iface"`"
     jq -cr '.addr_info[]' <<< "$iface" | while read -r iaddr; do {
+        # Only process IPv4 addresses
+        family="`jq -cr '.family' <<< "$iaddr"`"
+        [ "$family" != "inet" ] && continue
+        
         addr="`jq -cr '"\(.local)/\(.prefixlen)"' <<< "$iaddr"`"
         net="`cidr_to_net "$addr"`"
         [ -z "$net" ] && continue

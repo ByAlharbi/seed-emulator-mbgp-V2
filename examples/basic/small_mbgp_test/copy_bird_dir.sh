@@ -4,7 +4,7 @@
 SOURCE_DIR="./bird"
 
 # Define the output directory
-OUTPUT_DIR="./output"
+OUTPUT_DIR="./output_4_bgp"
 
 # Check if the source directory exists
 if [ ! -d "$SOURCE_DIR" ]; then

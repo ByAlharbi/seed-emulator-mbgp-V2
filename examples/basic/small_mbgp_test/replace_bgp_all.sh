@@ -15,7 +15,7 @@ fi
 router_containers='7f39b1650d6c' 
 #router_containers='5c7d838c2f02'
 #router_containers='7f39b1650d6c 5c7d838c2f02'
-router_containers='edbf1c614b2a f3a2d078107a'
+router_containers='as141r-router0-10.141.0.254 as142r-router0-10.142.0.254'
 if [[ -z "${router_containers:-}" ]]; then
   echo "❌ No matching router containers found."
   exit 1

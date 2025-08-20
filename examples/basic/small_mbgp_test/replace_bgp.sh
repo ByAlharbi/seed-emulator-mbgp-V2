@@ -12,7 +12,7 @@ fi
 # Get matching router container IDs (router, -r, or rs in name)
 #router_containers=$(docker ps --format '{{.ID}} {{.Names}}' | grep -E 'router|-r|rs' | awk '{print $1}')
 #router_containers='7f39b1650d6c'
-router_containers='edbf1c614b2a f3a2d078107a'
+router_containers='as141r-router0-10.141.0.254 as142r-router0-10.142.0.254'
 #router_containers='5c7d838c2f02'
 if [[ -z "$router_containers" ]]; then
   echo "❌ No matching router containers found."
