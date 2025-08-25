@@ -15,6 +15,18 @@ IbgpFileTemplates['ibgp_peer'] = '''
     }};
     local {localAddress} as {asn};
     neighbor {peerAddress} as {asn};
+    grpc transport yes;
+'''
+
+IbgpFileTemplates['bfd_protocol'] = '''{interfaces}
+'''
+
+IbgpFileTemplates['bfd_interface'] = '''
+    interface "{interface_name}" {{
+        min rx interval 100 ms;
+        min tx interval 100 ms;
+        multiplier 3;
+    }};
 '''
 
 class Ibgp(Layer, Graphable):
@@ -100,6 +112,20 @@ class Ibgp(Layer, Graphable):
 
             for local in routers:
                 self._log('setting up IBGP peering on as{}/{}...'.format(asn, local.getName()))
+
+                # Add BFD protocol configuration for all interfaces
+                if not local.getAttribute('__bfd_bootstrapped', False):
+                    local.setAttribute('__bfd_bootstrapped', True)
+                    interfaces_config = ""
+                    for iface in local.getInterfaces():
+                        interfaces_config += IbgpFileTemplates["bfd_interface"].format(
+                            interface_name=iface.getNet().getName()
+                        )
+                    
+                    if interfaces_config:
+                        local.addProtocol('bfd', '', IbgpFileTemplates["bfd_protocol"].format(
+                            interfaces=interfaces_config
+                        ))
 
                 remotes = []
                 self.__dfs(local, remotes)

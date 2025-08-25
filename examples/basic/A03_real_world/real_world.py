@@ -39,8 +39,8 @@ def run(dumpfile = None):
 
     ###############################################################################
 
-    base.createInternetExchange(100)
-    base.createInternetExchange(101)
+    base.createInternetExchange(103)
+    base.createInternetExchange(104)
 
     ###############################################################################
     # Create a transit AS (AS-150)
@@ -52,10 +52,10 @@ def run(dumpfile = None):
     as150.createNetwork('net2')
 
     # Create 4 routers: r1 and r4 are BGP routers (connected to internet exchange) 
-    as150.createRouter('r1').joinNetwork('ix100').joinNetwork('net0')
+    as150.createRouter('r1').joinNetwork('ix103').joinNetwork('net0')
     as150.createRouter('r2').joinNetwork('net0').joinNetwork('net1')
     as150.createRouter('r3').joinNetwork('net1').joinNetwork('net2')
-    as150.createRouter('r4').joinNetwork('net2').joinNetwork('ix101')
+    as150.createRouter('r4').joinNetwork('net2').joinNetwork('ix104')
 
 
     ###############################################################################
@@ -65,7 +65,7 @@ def run(dumpfile = None):
 
     # Create a network and enable the access from real world
     as151.createNetwork('net0').enableRemoteAccess(ovpn)
-    as151.createRouter('router0').joinNetwork('net0').joinNetwork('ix100')
+    as151.createRouter('router0').joinNetwork('net0').joinNetwork('ix103')
 
     # Create a web host
     as151.createHost('web').joinNetwork('net0')
@@ -80,7 +80,7 @@ def run(dumpfile = None):
 
     # Create a network and enable the access from real world
     as152.createNetwork('net0').enableRemoteAccess(ovpn)
-    as152.createRouter('router0').joinNetwork('net0').joinNetwork('ix101')
+    as152.createRouter('router0').joinNetwork('net0').joinNetwork('ix104')
 
     # Create a web host
     as152.createHost('web').joinNetwork('net0')
@@ -95,15 +95,15 @@ def run(dumpfile = None):
     # Packets coming into this AS will be routed out to the real world. 
 
     as11872 = base.createAutonomousSystem(11872)
-    as11872.createRealWorldRouter('rw').joinNetwork('ix101', '10.101.0.118')
+    as11872.createRealWorldRouter('rw').joinNetwork('ix104', '10.104.0.118')
 
 
     ###############################################################################
     # BGP peering 
 
-    ebgp.addPrivatePeering(100, 150, 151,   abRelationship = PeerRelationship.Provider)
-    ebgp.addPrivatePeering(101, 150, 152,   abRelationship = PeerRelationship.Provider)
-    ebgp.addPrivatePeering(101, 150, 11872, abRelationship = PeerRelationship.Unfiltered)
+    ebgp.addPrivatePeering(103, 150, 151,   abRelationship = PeerRelationship.Provider)
+    ebgp.addPrivatePeering(104, 150, 152,   abRelationship = PeerRelationship.Provider)
+    ebgp.addPrivatePeering(104, 150, 11872, abRelationship = PeerRelationship.Unfiltered)
 
 
     ###############################################################################

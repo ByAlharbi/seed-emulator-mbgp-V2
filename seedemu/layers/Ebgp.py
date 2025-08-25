@@ -14,6 +14,17 @@ define PEER_COMM = ({localAsn}, 2, 0);
 define PROVIDER_COMM = ({localAsn}, 3, 0);
 """
 
+EbgpFileTemplates["bfd_protocol"] = """{interfaces}
+"""
+
+EbgpFileTemplates["bfd_interface"] = """
+    interface "{interface_name}" {{
+        min rx interval 100 ms;
+        min tx interval 100 ms;
+        multiplier 3;
+    }};
+"""
+
 EbgpFileTemplates["rs_bird_peer"] =  """
     ipv4 {{
         import all;
@@ -22,6 +33,8 @@ EbgpFileTemplates["rs_bird_peer"] =  """
     rs client;
     local {localAddress} as {localAsn};
     neighbor {peerAddress} as {peerAsn};
+    grpc transport yes;
+    bfd yes;
 """
 
 EbgpFileTemplates["rnode_bird_peer"] = """
@@ -37,6 +50,8 @@ EbgpFileTemplates["rnode_bird_peer"] = """
     }};
     local {localAddress} as {localAsn};
     neighbor {peerAddress} as {peerAsn};
+    grpc transport yes;
+    bfd yes;
 """
 
 class PeerRelationship(Enum):
@@ -95,6 +110,20 @@ class Ebgp(Layer, Graphable):
                 
                 node.setAttribute('__bgp_bootstrapped', True)
                 node.appendFile('/etc/bird/bird.conf', EbgpFileTemplates['bgp_commons'].format(localAsn = node.getAsn()))
+            
+            # Add BFD protocol configuration for all interfaces (only once per node)
+            if not node.getAttribute('__bfd_bootstrapped', False):
+                node.setAttribute('__bfd_bootstrapped', True)
+                interfaces_config = ""
+                for iface in node.getInterfaces():
+                    interfaces_config += EbgpFileTemplates["bfd_interface"].format(
+                        interface_name=iface.getNet().getName()
+                    )
+                
+                if interfaces_config:
+                    node.addProtocol('bfd', '', EbgpFileTemplates["bfd_protocol"].format(
+                        interfaces=interfaces_config
+                    ))
 
             # create table for bgp
             node.addTable('t_bgp')

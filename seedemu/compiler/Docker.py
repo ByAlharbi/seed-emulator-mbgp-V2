@@ -907,7 +907,18 @@ class Docker(Compiler):
                 volumeList = lst
             )
         if type == 'rnode' or type == 'rs':
-            dockerfile = 'FROM bashayer123/bird_grpc:v1\n'  # Directly assign the router image here
+            # Use the specific Docker image for BGP routers with GRPC support
+            dockerfile = '''FROM bashayer123/bgp_grpc:v1
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Keep Debian's example path happy (matches your old behavior)
+RUN mkdir -p /usr/share/doc/bird2/examples/ && \\
+    touch /usr/share/doc/bird2/examples/bird.conf
+
+# Runtime working dir
+WORKDIR /
+
+'''
         else:
             dockerfile = DockerCompilerFileTemplates['dockerfile']  # Use the default template for other node types
 
@@ -952,33 +963,39 @@ class Docker(Compiler):
         for (cmd, fork) in node.getPostConfigCommands():
             start_commands += '{}{}\n'.format(cmd, ' &' if fork else '')
 
-        dockerfile += self._addFile('/start.sh', DockerCompilerFileTemplates['start_script'].format(
-            startCommands = start_commands
-        ))
-
-        dockerfile += self._addFile('/seedemu_sniffer', DockerCompilerFileTemplates['seedemu_sniffer'])
-        dockerfile += self._addFile('/seedemu_worker', DockerCompilerFileTemplates['seedemu_worker'])
+        if type == 'rnode' or type == 'rs':
+            # For BGP routers, use specific file handling matching the template
+            dockerfile += '# Runtime scripts and helpers\n'
+            dockerfile += self._addFile('/start.sh', DockerCompilerFileTemplates['start_script'].format(
+                startCommands = start_commands
+            ))
+            dockerfile += self._addFile('/seedemu_sniffer', DockerCompilerFileTemplates['seedemu_sniffer'])
+            dockerfile += self._addFile('/seedemu_worker', DockerCompilerFileTemplates['seedemu_worker'])
+            dockerfile += self._addFile('/interface_setup', '')  # Add empty interface_setup file
+            dockerfile += 'RUN chmod +x /start.sh /seedemu_sniffer /seedemu_worker /interface_setup\n'
+        else:
+            # For non-BGP nodes, use the standard approach
+            dockerfile += self._addFile('/start.sh', DockerCompilerFileTemplates['start_script'].format(
+                startCommands = start_commands
+            ))
+            dockerfile += self._addFile('/seedemu_sniffer', DockerCompilerFileTemplates['seedemu_sniffer'])
+            dockerfile += self._addFile('/seedemu_worker', DockerCompilerFileTemplates['seedemu_worker'])
+            dockerfile += 'RUN chmod +x /start.sh\n'
+            dockerfile += 'RUN chmod +x /seedemu_sniffer\n'
+            dockerfile += 'RUN chmod +x /seedemu_worker\n'
 
         if type == 'rnode' or type == 'rs':
-            dockerfile += 'RUN mkdir /bird\n'
-            dockerfile += 'COPY ./bird /bird\n'
-            dockerfile += 'WORKDIR /bird\n'
-            dockerfile += 'RUN autoreconf -i\n'
-            dockerfile += 'RUN ./configure --sysconfdir=/etc/bird\n'
-            dockerfile += 'RUN make\n'
-            dockerfile += 'RUN make install\n'
-            dockerfile += 'ENV LD_LIBRARY_PATH=/bird/proto/mbgp/mBGP/cmake/build:$LD_LIBRARY_PATH\n'
-            dockerfile += 'RUN ulimit -c unlimited\n'
-            dockerfile += 'ENV CORE_PATTERN=/tmp/core.%e.%p.%t\n'
-            dockerfile += 'WORKDIR /\n'
-            
-        dockerfile += 'RUN chmod +x /start.sh\n'
-        dockerfile += 'RUN chmod +x /seedemu_sniffer\n'
-        dockerfile += 'RUN chmod +x /seedemu_worker\n'
-
+            # Add configs section for BGP routers
+            dockerfile += '\n# Configs\n'
+        
         for file in node.getFiles():
             (path, content) = file.get()
             dockerfile += self._addFile(path, content)
+        
+        if type == 'rnode' or type == 'rs':
+            # Add ifinfo.txt for BGP routers if not already present
+            if not any('/ifinfo.txt' in file.get()[0] for file in node.getFiles()):
+                dockerfile += self._addFile('/ifinfo.txt', '')
 
         for (cpath, hpath) in node.getImportedFiles().items():
             dockerfile += self._importFile(cpath, hpath)

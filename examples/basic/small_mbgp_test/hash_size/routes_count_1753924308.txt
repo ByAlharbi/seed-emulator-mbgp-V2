@@ -1,9 +1,0 @@
-mBGP Route Count Monitoring - Wed Jul 30 19:11:48 MDT 2025
-========================================
-
-📈 Capture Analysis:
-===================
-   BGP Updates: 0
-0
-   gRPC packets: 60
-   Total packets: 636
