@@ -5,6 +5,7 @@ from ipaddress import IPv4Network
 RoutingFileTemplates: Dict[str, str] = {}
 
 RoutingFileTemplates["rs_bird"] = """\
+log "/var/log/bird.log" all;
 router id {routerId};
 protocol device {{
 }}
@@ -15,6 +16,7 @@ RoutingFileTemplates["rnode_bird_direct_interface"] = """
 """
 
 RoutingFileTemplates["rnode_bird"] = """\
+log "/var/log/bird.log" all;
 router id {routerId};
 ipv4 table t_direct;
 protocol device {{
