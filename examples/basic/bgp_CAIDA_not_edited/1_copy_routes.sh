@@ -3,7 +3,7 @@
 # Router details
 AS_NUM="140"
 ROUTER_NAME="as${AS_NUM}r-router0-10.${AS_NUM}.0.254"
-ROUTER_NAME="78974b0a1741"
+ROUTER_NAME="a1a532f5e5c0 "
 ROUTE_FILE="route_${AS_NUM}_static_routes.conf"
 
 # Check if route file exists
