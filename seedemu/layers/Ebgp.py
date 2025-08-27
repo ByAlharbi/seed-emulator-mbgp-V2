@@ -51,7 +51,6 @@ EbgpFileTemplates["rnode_bird_peer"] = """
     local {localAddress} as {localAsn};
     neighbor {peerAddress} as {peerAsn};
     grpc transport yes;
-    bfd yes;
 """
 
 class PeerRelationship(Enum):
