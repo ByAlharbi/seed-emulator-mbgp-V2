@@ -908,7 +908,7 @@ class Docker(Compiler):
             )
         if type == 'rnode' or type == 'rs':
             # Use the specific Docker image for BGP routers with GRPC support
-            dockerfile = '''FROM bashayer123/bgp_grpc:v1
+            dockerfile = '''FROM bashayer123/bgp_grpc:latest
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Keep Debian's example path happy (matches your old behavior)
