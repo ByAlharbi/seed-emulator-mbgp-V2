@@ -1,7 +1,3 @@
-# We need IX104 for AS135's ring
-    ix104 = base.createInternetExchange(104)#!/usr/bin/env python3
-# encoding: utf-8
-
 from seedemu.layers import Base, Routing, Ebgp, PeerRelationship
 from seedemu.compiler import Docker, Platform
 from seedemu.core import Emulator
@@ -23,6 +19,7 @@ def run(dumpfile = None):
     ix101 = base.createInternetExchange(101)
     ix102 = base.createInternetExchange(102)
     ix103 = base.createInternetExchange(103)
+    ix104 = base.createInternetExchange(104)  # Needed for AS135's ring
     ix105 = base.createInternetExchange(105)
     ix106 = base.createInternetExchange(106)
 
