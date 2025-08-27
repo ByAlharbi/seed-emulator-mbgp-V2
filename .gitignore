@@ -31,4 +31,3 @@ project-words.txt
 test_result.txt
 **/bird*/
 *.data
-*.pcap
