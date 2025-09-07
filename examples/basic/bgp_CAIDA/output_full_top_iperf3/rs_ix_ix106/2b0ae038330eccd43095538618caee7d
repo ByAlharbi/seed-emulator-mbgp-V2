@@ -1,0 +1,5 @@
+log "/var/log/bird.log" all;
+router id 10.106.0.106;
+protocol device {
+}
+

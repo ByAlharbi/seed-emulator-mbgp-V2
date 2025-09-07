@@ -1,0 +1,219 @@
+log "/var/log/bird.log" all;
+router id 10.0.0.39;
+ipv4 table t_direct;
+protocol device {
+}
+protocol kernel {
+    ipv4 {
+        import all;
+        export all;
+    };
+    learn;
+}
+protocol direct local_nets {
+    ipv4 {
+        table t_direct;
+        import all;
+    };
+
+    interface "net0";
+
+}
+define LOCAL_COMM = (80, 0, 0);
+define CUSTOMER_COMM = (80, 1, 0);
+define PEER_COMM = (80, 2, 0);
+define PROVIDER_COMM = (80, 3, 0);
+protocol bfd  {
+    interface "net0" {
+        min rx interval 100 ms;
+        min tx interval 100 ms;
+        multiplier 3;
+    };
+
+    interface "ix100" {
+        min rx interval 100 ms;
+        min tx interval 100 ms;
+        multiplier 3;
+    };
+
+    interface "ix105" {
+        min rx interval 100 ms;
+        min tx interval 100 ms;
+        multiplier 3;
+    };
+
+}
+ipv4 table t_bgp;
+protocol pipe {
+    table t_bgp;
+    peer table master4;
+    import all;
+    export all;
+}
+protocol pipe {
+    table t_direct;
+    peer table t_bgp;
+    import all;
+    export filter { bgp_large_community.add(LOCAL_COMM); bgp_local_pref = 40; accept; };
+}
+protocol bgp u_as131 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(PROVIDER_COMM);
+            bgp_local_pref = 10;
+            accept;
+        };
+        export where bgp_large_community ~ [LOCAL_COMM, CUSTOMER_COMM];
+        next hop self;
+    };
+    local 10.100.0.80 as 80;
+    neighbor 10.100.0.131 as 131;
+    grpc transport yes;
+    bfd yes;
+}
+protocol bgp u_as133 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(PROVIDER_COMM);
+            bgp_local_pref = 10;
+            accept;
+        };
+        export where bgp_large_community ~ [LOCAL_COMM, CUSTOMER_COMM];
+        next hop self;
+    };
+    local 10.100.0.80 as 80;
+    neighbor 10.100.0.133 as 133;
+    grpc transport yes;
+    bfd yes;
+}
+protocol bgp u_as132 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(PROVIDER_COMM);
+            bgp_local_pref = 10;
+            accept;
+        };
+        export where bgp_large_community ~ [LOCAL_COMM, CUSTOMER_COMM];
+        next hop self;
+    };
+    local 10.100.0.80 as 80;
+    neighbor 10.100.0.132 as 132;
+    grpc transport yes;
+    bfd yes;
+}
+protocol bgp x_as85 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.100.0.80 as 80;
+    neighbor 10.100.0.85 as 85;
+    grpc transport yes;
+    bfd yes;
+}
+protocol bgp x_as81 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.105.0.80 as 80;
+    neighbor 10.105.0.81 as 81;
+    grpc transport yes;
+    bfd yes;
+}
+protocol bgp x_as40 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(PROVIDER_COMM);
+            bgp_local_pref = 10;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.100.0.80 as 80;
+    neighbor 10.100.0.40 as 40;
+    grpc transport yes;
+    bfd yes;
+}
+protocol bgp x_as50 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(PROVIDER_COMM);
+            bgp_local_pref = 10;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.100.0.80 as 80;
+    neighbor 10.100.0.50 as 50;
+    grpc transport yes;
+    bfd yes;
+}
+protocol bgp x_as60 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(PROVIDER_COMM);
+            bgp_local_pref = 10;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.100.0.80 as 80;
+    neighbor 10.100.0.60 as 60;
+    grpc transport yes;
+    bfd yes;
+}
+protocol bgp x_as70 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(PROVIDER_COMM);
+            bgp_local_pref = 10;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.100.0.80 as 80;
+    neighbor 10.100.0.70 as 70;
+    grpc transport yes;
+    bfd yes;
+}
+protocol bgp x_as90 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.100.0.80 as 80;
+    neighbor 10.100.0.90 as 90;
+    grpc transport yes;
+    bfd yes;
+}
+

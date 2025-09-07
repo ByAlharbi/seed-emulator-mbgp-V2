@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# encoding: utf-8
+
 from seedemu.layers import Base, Routing, Ebgp, PeerRelationship
 from seedemu.compiler import Docker, Platform
 from seedemu.core import Emulator
@@ -10,113 +13,68 @@ def run(dumpfile = None):
     ebgp    = Ebgp()
 
     ###############################################################################
-    # Create Internet Exchanges - minimal set
+    # Create Internet Exchanges - ONLY 2 IXs
 
-    # Main clique exchange
     ix100 = base.createInternetExchange(100)
-    
-    # Tier 1 exchanges for the ring topology
     ix101 = base.createInternetExchange(101)
-    ix102 = base.createInternetExchange(102)
-    ix103 = base.createInternetExchange(103)
-    ix104 = base.createInternetExchange(104)  # Needed for AS135's ring
-    ix105 = base.createInternetExchange(105)
-    ix106 = base.createInternetExchange(106)
 
     ###############################################################################
-    # Create Autonomous Systems - Mini clique + 1 Tier 1 group
+    # Create Autonomous Systems
 
-    # Create mini Tier 0 (Clique) - just 4 ASes for easier debugging
-    clique_ases = [127, 128, 129, 130]
-    for asn in clique_ases:
+    # Create AS40 - the router with 17 connections
+    as40 = base.createAutonomousSystem(40)
+    as40.createNetwork('net0')
+    as40_router = as40.createRouter('router0')
+    as40_router.joinNetwork('net0')
+    as40_router.joinNetwork('ix100')
+    as40_router.joinNetwork('ix101')
+    as40_host = as40.createHost('host0')
+    as40_host.joinNetwork('net0')
+
+    # Create ASes for AS40 to connect to - distributed across IX100 and IX101
+    # Group 1: IX100 connections (10 ASes)
+    ix100_ases = [127, 128, 129, 130, 131, 132, 133, 60, 80, 90]
+    for asn in ix100_ases:
         current_as = base.createAutonomousSystem(asn)
         current_as.createNetwork('net0')
         router = current_as.createRouter('router0')
         router.joinNetwork('net0')
         router.joinNetwork('ix100')
-        # AS130 also connects to ix106 like in original
-        if asn == 130:
-            router.joinNetwork('ix106')
         host = current_as.createHost('host0')
         host.joinNetwork('net0')
 
-    # Create Tier 1 AS groups - 2 groups for debugging
-    tier1_connectivity = {
-        # AS134 components (AS40-45) - 6 components forming a ring
-        40: ['ix100', 'ix101'],
-        41: ['ix101', 'ix102'],
-        42: ['ix102', 'ix103'],
-        43: ['ix103', 'ix105'],
-        44: ['ix105', 'ix106'],
-        45: ['ix106', 'ix100'],
-        
-        # AS135 components (AS50-56) - 7 components forming a ring  
-        50: ['ix100', 'ix102'],
-        51: ['ix102', 'ix101'],
-        52: ['ix101', 'ix103'],
-        53: ['ix103', 'ix104'],
-        54: ['ix104', 'ix105'],
-        55: ['ix105', 'ix106'],
-        56: ['ix106', 'ix100']
-    }
-
-    for asn, exchanges in tier1_connectivity.items():
+    # Remove the extra ASes we don't need
+    # Group 2: IX101 connections (5 ASes to make total 17 for AS40)
+    ix101_ases = [41, 45, 148, 157, 180]
+    for asn in ix101_ases:
         current_as = base.createAutonomousSystem(asn)
         current_as.createNetwork('net0')
         router = current_as.createRouter('router0')
         router.joinNetwork('net0')
-        for exchange in exchanges:
-            router.joinNetwork(exchange)
+        router.joinNetwork('ix101')
         host = current_as.createHost('host0')
         host.joinNetwork('net0')
 
     ###############################################################################
-    # Create eBGP peering relationships
+    # Create eBGP peering relationships - AS40 gets exactly 17 connections
 
-    # Mini clique peering @ IX100 - full mesh between 4 clique ASes
-    clique_peerings = [
-        (127, [128, 129, 130]),
-        (128, [129, 130]),
-        (129, [130])
-    ]
-    
-    for provider, customers in clique_peerings:
-        ebgp.addPrivatePeerings(100, [provider], customers, PeerRelationship.Peer)
+    # AS40 connections at IX100 (10 connections)
+    for peer_as in ix100_ases:
+        ebgp.addPrivatePeering(100, 40, peer_as, abRelationship=PeerRelationship.Unfiltered)
 
-    # Connect clique ASes to both Tier 1 groups as customers
-    ebgp.addPrivatePeerings(100, clique_ases, [40], PeerRelationship.Provider)
-    ebgp.addPrivatePeerings(100, clique_ases, [50], PeerRelationship.Provider)
+    # AS40 connections at IX101 (7 connections)
+    for peer_as in ix101_ases:
+        ebgp.addPrivatePeering(101, 40, peer_as, abRelationship=PeerRelationship.Unfiltered)
 
-    # Connect Tier 1 components in rings
-    # AS134 ring (AS40-45)
-    tier1_as134_connections = [
-        (100, 40, 45),  # Close the ring
-        (101, 40, 41),
-        (102, 41, 42), 
-        (103, 42, 43),
-        (105, 43, 44),
-        (106, 44, 45)
-    ]
-    
-    for ix, as1, as2 in tier1_as134_connections:
-        ebgp.addPrivatePeering(ix, as1, as2, abRelationship=PeerRelationship.Unfiltered)
-        
-    # AS135 ring (AS50-56)
-    tier1_as135_connections = [
-        (100, 50, 56),  # Close the ring
-        (102, 50, 51),
-        (101, 51, 52),
-        (103, 52, 53),
-        (104, 53, 54),
-        (105, 54, 55),
-        (106, 55, 56)
-    ]
-    
-    for ix, as1, as2 in tier1_as135_connections:
-        ebgp.addPrivatePeering(ix, as1, as2, abRelationship=PeerRelationship.Unfiltered)
+    # Create some additional relationships between other ASes for realism
+    # Clique peering at IX100
+    ebgp.addPrivatePeering(100, 127, 128, abRelationship=PeerRelationship.Unfiltered)
+    ebgp.addPrivatePeering(100, 129, 130, abRelationship=PeerRelationship.Unfiltered)
+    ebgp.addPrivatePeering(100, 131, 132, abRelationship=PeerRelationship.Unfiltered)
 
-    # Tier 1 to Tier 1 peering - this might be where loops form!
-    ebgp.addPrivatePeering(100, 40, 50, abRelationship=PeerRelationship.Peer)
+    # Some IX101 relationships
+    ebgp.addPrivatePeering(101, 41, 45, abRelationship=PeerRelationship.Unfiltered)
+    ebgp.addPrivatePeering(101, 148, 157, abRelationship=PeerRelationship.Unfiltered)
 
     ###############################################################################
     # Rendering

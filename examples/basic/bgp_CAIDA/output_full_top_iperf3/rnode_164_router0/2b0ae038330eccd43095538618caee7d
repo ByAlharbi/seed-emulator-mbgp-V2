@@ -1,0 +1,69 @@
+log "/var/log/bird.log" all;
+router id 10.0.0.77;
+ipv4 table t_direct;
+protocol device {
+}
+protocol kernel {
+    ipv4 {
+        import all;
+        export all;
+    };
+    learn;
+}
+protocol direct local_nets {
+    ipv4 {
+        table t_direct;
+        import all;
+    };
+
+    interface "net0";
+
+}
+define LOCAL_COMM = (164, 0, 0);
+define CUSTOMER_COMM = (164, 1, 0);
+define PEER_COMM = (164, 2, 0);
+define PROVIDER_COMM = (164, 3, 0);
+protocol bfd  {
+    interface "net0" {
+        min rx interval 100 ms;
+        min tx interval 100 ms;
+        multiplier 3;
+    };
+
+    interface "ix104" {
+        min rx interval 100 ms;
+        min tx interval 100 ms;
+        multiplier 3;
+    };
+
+}
+ipv4 table t_bgp;
+protocol pipe {
+    table t_bgp;
+    peer table master4;
+    import all;
+    export all;
+}
+protocol pipe {
+    table t_direct;
+    peer table t_bgp;
+    import all;
+    export filter { bgp_large_community.add(LOCAL_COMM); bgp_local_pref = 40; accept; };
+}
+protocol bgp x_as71 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(PROVIDER_COMM);
+            bgp_local_pref = 10;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.104.0.164 as 164;
+    neighbor 10.104.0.71 as 71;
+    grpc transport yes;
+    bfd yes;
+}
+
