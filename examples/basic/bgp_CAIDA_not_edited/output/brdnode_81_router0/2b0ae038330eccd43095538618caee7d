@@ -1,0 +1,164 @@
+router id 10.0.0.40;
+ipv4 table t_direct;
+protocol device {
+}
+protocol kernel {
+    ipv4 {
+        import all;
+        export all;
+    };
+    learn;
+}
+protocol direct local_nets {
+    ipv4 {
+        table t_direct;
+        import all;
+    };
+
+    interface "net0";
+
+}
+define LOCAL_COMM = (81, 0, 0);
+define CUSTOMER_COMM = (81, 1, 0);
+define PEER_COMM = (81, 2, 0);
+define PROVIDER_COMM = (81, 3, 0);
+ipv4 table t_bgp;
+protocol pipe {
+    table t_bgp;
+    peer table master4;
+    import none;
+    export all;
+}
+protocol pipe {
+    table t_direct;
+    peer table t_bgp;
+    import none;
+    export filter { bgp_large_community.add(LOCAL_COMM); bgp_local_pref = 40; accept; };
+}
+protocol bgp x_as80 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(PROVIDER_COMM);
+            bgp_local_pref = 10;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.105.0.81 as 81;
+    neighbor 10.105.0.80 as 80;
+}
+protocol bgp x_as82 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.101.0.81 as 81;
+    neighbor 10.101.0.82 as 82;
+}
+protocol bgp x_as167 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.105.0.81 as 81;
+    neighbor 10.105.0.167 as 167;
+}
+protocol bgp x_as168 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.105.0.81 as 81;
+    neighbor 10.105.0.168 as 168;
+}
+protocol bgp x_as169 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.105.0.81 as 81;
+    neighbor 10.105.0.169 as 169;
+}
+protocol bgp x_as170 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.105.0.81 as 81;
+    neighbor 10.105.0.170 as 170;
+}
+protocol bgp x_as166 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.105.0.81 as 81;
+    neighbor 10.105.0.166 as 166;
+}
+protocol bgp x_as181 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.105.0.81 as 81;
+    neighbor 10.105.0.181 as 181;
+}
+protocol bgp x_as180 {
+    ipv4 {
+        table t_bgp;
+        import filter {
+            bgp_large_community.add(CUSTOMER_COMM);
+            bgp_local_pref = 30;
+            accept;
+        };
+        export all;
+        next hop self;
+    };
+    local 10.105.0.81 as 81;
+    neighbor 10.105.0.180 as 180;
+}
+
